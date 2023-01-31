@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.SigmaProject.iml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\kelme\Documents\GitHub\SigmaProject\SigmaProject\.idea\.idea.SigmaProject\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
