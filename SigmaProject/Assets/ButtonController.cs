@@ -20,5 +20,10 @@ public class ButtonController : MonoBehaviour
     {
         helpScreen.SetActive(false);
     }
+
+    public void newScene()
+    {
+        SceneManager.LoadScene("Test Scene");
+    }
     
 }
