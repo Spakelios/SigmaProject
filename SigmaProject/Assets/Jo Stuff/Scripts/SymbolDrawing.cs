@@ -34,6 +34,14 @@ public class SymbolDrawing : MonoBehaviour
 
 	public TextMeshProUGUI notif;
 	private string spell;
+
+	private bool fireMagic;
+	private bool waterMagic;
+	private bool electricMagic;
+
+	private Gradient fireColour;
+	private Gradient waterColour;
+	private Gradient electricColour;
 	
 	
 
@@ -55,6 +63,36 @@ public class SymbolDrawing : MonoBehaviour
 		{
 			"F", "T", "L"
 		};
+
+		fireColour = new Gradient();
+		fireColour.SetKeys(
+			new GradientColorKey[]
+			{
+				new GradientColorKey(Color.red, 0.0f), new GradientColorKey(new Color(1f, 0.5f, 0f, 1f), 0.5f), new GradientColorKey(Color.yellow, 1.0f)
+			},
+			new GradientAlphaKey[] 
+				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
+		);
+
+		waterColour = new Gradient();
+		waterColour.SetKeys(
+			new GradientColorKey[]
+			{
+				new GradientColorKey(new Color(0f, 0f, 0.5f, 1f), 0.0f), new GradientColorKey(Color.blue, 0.5f), new GradientColorKey(new Color(0f, 1f, 1f, 1f), 1.0f)
+			},
+			new GradientAlphaKey[]
+				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
+		);
+
+		electricColour = new Gradient();
+		electricColour.SetKeys(
+			new GradientColorKey[]
+			{
+				new GradientColorKey(new Color(0.3f, 0f, 0.5f, 1f), 0.0f), new GradientColorKey(new Color(0.5f, 0f, 1f, 1f), 0.5f), new GradientColorKey(Color.magenta, 1.0f)
+			},
+			new GradientAlphaKey[]
+				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
+		);
 	}
 
 	void Update () {
@@ -97,7 +135,22 @@ public class SymbolDrawing : MonoBehaviour
 				currentGestureLineRenderer = tmpGesture.GetComponent<LineRenderer>();
 				currentGestureLineRenderer.startWidth = 0.1f;
 				currentGestureLineRenderer.endWidth = 0.1f;
+
+				if (fireMagic)
+				{
+					currentGestureLineRenderer.colorGradient = fireColour;
+				}
 				
+				else if (waterMagic)
+				{
+					currentGestureLineRenderer.colorGradient = waterColour;
+				}
+					
+				else if (electricMagic)
+				{
+					currentGestureLineRenderer.colorGradient = electricColour;
+				}
+
 				gestureLinesRenderer.Add(currentGestureLineRenderer);
 				
 				vertexCount = 0;
@@ -169,5 +222,26 @@ public class SymbolDrawing : MonoBehaviour
 			Destroy(lineRenderer.gameObject);
 		}
 		gestureLinesRenderer.Clear();
+	}
+
+	public void FireMagic()
+	{
+		fireMagic = true;
+		waterMagic = false;
+		electricMagic = false;
+	}
+
+	public void WaterMagic()
+	{
+		fireMagic = false;
+		waterMagic = true;
+		electricMagic = false;
+	}
+
+	public void ElectricMagic()
+	{
+		fireMagic = false;
+		waterMagic = false;
+		electricMagic = true;
 	}
 }

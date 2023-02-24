@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/WebGLTest Assets/empty.unity
     guid: c4c1ac2d87370b642835aed7931f1dec
   - enabled: 1
-    path: Assets/SymbolDrawingTest/Test Scene.unity
+    path: Assets/Jo stuff/Scenes/Symbol Drawing Test.unity
     guid: 59f8c8fe24b54b1409c313574bfd84fb
   m_configObjects: {}
