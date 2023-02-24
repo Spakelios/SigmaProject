@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonController : MonoBehaviour
+public class ButtonControlTest : MonoBehaviour
 {
     public GameObject helpScreen;
     public void start()
