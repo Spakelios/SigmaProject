@@ -30,7 +30,7 @@ public class SymbolDrawing : MonoBehaviour
 
 	private String[] symbols;
 
-	private Result gestureResult;
+	public Result gestureResult;
 
 	public TextMeshProUGUI notif;
 	private string spell;
@@ -42,6 +42,8 @@ public class SymbolDrawing : MonoBehaviour
 	private Gradient fireColour;
 	private Gradient waterColour;
 	private Gradient electricColour;
+
+	private GameManager gameManager;
 	
 	
 
@@ -93,6 +95,8 @@ public class SymbolDrawing : MonoBehaviour
 			new GradientAlphaKey[]
 				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
 		);
+
+		gameManager = FindObjectOfType<GameManager>();
 	}
 
 	void Update () {
@@ -179,10 +183,13 @@ public class SymbolDrawing : MonoBehaviour
 		Gesture candidate = new Gesture(points.ToArray());
 
 		gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+		
+		gameManager.CalculateDamage();
 
 		if (symbols.Contains(gestureResult.GestureClass))
 		{
 			recognized = true;
+			print(gestureResult.Score);
 			if (gestureResult.GestureClass == symbols[0])
 			{
 				spell = "Fireball";
@@ -207,6 +214,7 @@ public class SymbolDrawing : MonoBehaviour
 			recognized = false;
 			notif.text = "Spell failed!";
 			ClearLine();
+			gameManager.SpellFailed();
 		}
 		
 	}
