@@ -184,10 +184,9 @@ public class SymbolDrawing : MonoBehaviour
 
 		gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 		
-		gameManager.CalculateDamage();
-
 		if (symbols.Contains(gestureResult.GestureClass))
 		{
+			gameManager.CalculateDamage();
 			recognized = true;
 			print(gestureResult.Score);
 			if (gestureResult.GestureClass == symbols[0])
