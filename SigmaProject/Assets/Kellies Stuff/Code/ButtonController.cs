@@ -7,27 +7,33 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject Scrollbar;
+    public GameObject Cam1, Cam2, player, text;
+    
     public Animator anim;
-    public EventTrigger EventTrigger;
-   
+    public GameObject popup;
     
     public void ActivateScroll()
     {
-        // Scrollbar.SetActive(true);
-        // anim.Play("Interactive");
-        
-        if (Scrollbar.activeInHierarchy)
-        {
-            Scrollbar.SetActive(false);
-            anim.Play("NonInteractive");
-        }
-        else
-        {
-            Scrollbar.SetActive(true);
-            anim.Play("Interactive");
-        }
+
+        anim.Play("Interactive");  
+
     }
 
+    public void YesBut()
+    {
+        anim.Play("Interactive");
+        Cam1.SetActive(true);
+        Cam2.SetActive(false);
+        popup.SetActive(false);
+        player.SetActive(false);
+        text.SetActive(true);
+       
+    }
+
+    public void NoBut()
+    {
+        anim.Play("ScrollDown");
+        popup.SetActive(false);
+    }
   
 }
