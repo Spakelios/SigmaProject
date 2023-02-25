@@ -9,7 +9,7 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject Cam1, Cam2, player, text;
     
-    public Animator anim;
+    public Animator anim, ShaderAnim;
     public GameObject popup;
     
     public void ActivateScroll()
@@ -27,13 +27,23 @@ public class ButtonController : MonoBehaviour
         popup.SetActive(false);
         player.SetActive(false);
         text.SetActive(true);
-       
+        StartCoroutine(ShaderAnimation());
+
     }
 
     public void NoBut()
     {
         anim.Play("ScrollDown");
         popup.SetActive(false);
+    }
+
+    IEnumerator ShaderAnimation()
+    {
+        ShaderAnim.Play("wo");
+
+        yield return new WaitForSeconds(10f);
+        
+        ShaderAnim.StopPlayback();
     }
   
 }
