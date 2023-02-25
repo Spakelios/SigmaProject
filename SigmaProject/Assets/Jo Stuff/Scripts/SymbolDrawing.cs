@@ -44,8 +44,18 @@ public class SymbolDrawing : MonoBehaviour
 	private Gradient electricColour;
 
 	private GameManager gameManager;
-	
-	
+
+	public GameObject magicWandPrefab;
+	private GameObject magicWand;
+	private bool magicWandSpawned;
+
+	public Vector2 mousePos;
+
+	public Texture2D mouseCursor;
+
+	private Vector2 hotspot = Vector2.zero;
+
+
 
 	void Start () {
 
@@ -99,7 +109,10 @@ public class SymbolDrawing : MonoBehaviour
 		gameManager = FindObjectOfType<GameManager>();
 	}
 
-	void Update () {
+	void Update ()
+	{
+
+		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 		if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer) {
 			if (Input.touchCount > 0) {
@@ -113,7 +126,11 @@ public class SymbolDrawing : MonoBehaviour
 		
 		if(!canDraw)
 			return;
-		
+
+		if (magicWandSpawned)
+		{
+			magicWand.transform.position = mousePos;
+		}
 
 		if (Input.GetMouseButtonDown(0)) {
 
@@ -166,16 +183,28 @@ public class SymbolDrawing : MonoBehaviour
 				currentGestureLineRenderer.SetVertexCount(++vertexCount);
 				currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
 		}
+		
+		
 	}
 
 	private void OnMouseOver()
 	{
 		canDraw = true;
+
+		if (magicWandSpawned) return;
+		magicWand = Instantiate(magicWandPrefab);
+		magicWandSpawned = true;
+		//Cursor.SetCursor(mouseCursor, hotspot, CursorMode.Auto);
+		Cursor.visible = false;
 	}
 
 	private void OnMouseExit()
 	{
 		canDraw = false;
+		Destroy(magicWand);
+		magicWandSpawned = false;
+		//Cursor.SetCursor(null, hotspot, CursorMode.Auto);
+		Cursor.visible = true;
 	}
 
 	public void TryRecognise()
