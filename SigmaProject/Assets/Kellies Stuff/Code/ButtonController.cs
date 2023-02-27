@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject Cam1, Cam2, player, text;
+    public GameObject Cam1, Cam2, player, text, PB;
     
     public Animator anim, ShaderAnim;
     public GameObject popup;
@@ -45,5 +45,10 @@ public class ButtonController : MonoBehaviour
         
         ShaderAnim.StopPlayback();
     }
-  
+
+    public void show()
+    {
+        PB.SetActive(true);
+        anim.Play("Interactive");
+    }
 }
