@@ -41,3 +41,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: allwaysBot
+    uniqueID: 3961942537
+    locked: 0
+  - name: groundFloor
+    uniqueID: 1612250821
+    locked: 0
+  - name: PlayerUnder
+    uniqueID: 1764893105
+    locked: 0
+  - name: topFloorDecor
+    uniqueID: 2264602315
+    locked: 0
+  - name: topFloor
+    uniqueID: 1202823877
+    locked: 0
+  - name: PlayerLayer
+    uniqueID: 964732495
+    locked: 0
+  - name: allwaysTop
+    uniqueID: 2901799005
+    locked: 0
