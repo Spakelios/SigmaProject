@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,5 +20,10 @@ public void ScrollUnlit()
 public void stay()
 {
     anim.Play("Anim");
+}
+
+public void move()
+{
+    anim.Play("Player");
 }
 }

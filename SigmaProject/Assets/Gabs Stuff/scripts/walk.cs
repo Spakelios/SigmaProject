@@ -5,7 +5,7 @@ using UnityEngine;
 public class walk : MonoBehaviour
 {
     float xMOV;
-    float yMOV;
+    float yMOV; 
     public float speed;
     Rigidbody2D rb;
     public GameObject CurrentLayer;

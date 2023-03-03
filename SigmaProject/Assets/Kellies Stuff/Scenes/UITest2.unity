@@ -791,6 +791,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6506215946089883776, guid: 78f8a6dcf5b6a4141b06b3447ff32219, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6506215946089883777, guid: 78f8a6dcf5b6a4141b06b3447ff32219, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -837,6 +841,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506215946089883778, guid: 78f8a6dcf5b6a4141b06b3447ff32219, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506215946089883780, guid: 78f8a6dcf5b6a4141b06b3447ff32219, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506215946089883783, guid: 78f8a6dcf5b6a4141b06b3447ff32219, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7961,7 +7973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1929888671
 Transform:
   m_ObjectHideFlags: 0
