@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Animators : MonoBehaviour
 {
-public Animator anim;
+    public Animator anim;
 
 public void ScrollHighlighter()
 {
@@ -26,4 +26,6 @@ public void move()
 {
     anim.Play("Player");
 }
+
+
 }
