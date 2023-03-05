@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject Cam1, Cam2, player, text, PB;
+    public GameObject Cam1, Cam2, player, text, PB, BookPopUp, BookUI;
     public walk walk;
     public Animator anim, ShaderAnim, StoneAnim;
     public GameObject popup;
@@ -70,6 +70,8 @@ public class ButtonController : MonoBehaviour
         
         Cam2.SetActive(true);
         Cam1.SetActive(true);
+        BookPopUp.SetActive(true);
+        BookUI.SetActive(true);
         StoneAnim.Play("MovingPath");
 
         yield return new WaitForSeconds(7f);
