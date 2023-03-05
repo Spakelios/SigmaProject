@@ -28,7 +28,11 @@ public class SymbolDrawing : MonoBehaviour
 
 	public bool canDraw;
 
-	private String[] symbols;
+	public String[] symbols;
+
+	private String[] fireSymbols;
+	private String[] waterSymbols;
+	private String[] mossSymbols;
 
 	public Result gestureResult;
 
@@ -38,10 +42,12 @@ public class SymbolDrawing : MonoBehaviour
 	private bool fireMagic;
 	private bool waterMagic;
 	private bool electricMagic;
+	private bool mossMagic;
 
 	private Gradient fireColour;
 	private Gradient waterColour;
 	private Gradient electricColour;
+	private Gradient mossColour;
 
 	private GameManager gameManager;
 
@@ -54,6 +60,8 @@ public class SymbolDrawing : MonoBehaviour
 	public Texture2D mouseCursor;
 
 	private Vector2 hotspot = Vector2.zero;
+
+	public TextMeshProUGUI symbol;
 
 
 
@@ -71,10 +79,12 @@ public class SymbolDrawing : MonoBehaviour
 		foreach (string filePath in filePaths)
 			trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
 
+		/*
 		symbols = new[]
 		{
 			"F", "T", "L"
 		};
+		*/
 
 		fireColour = new Gradient();
 		fireColour.SetKeys(
@@ -106,7 +116,39 @@ public class SymbolDrawing : MonoBehaviour
 				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
 		);
 
+		mossColour = new Gradient();
+		mossColour.SetKeys(
+			new GradientColorKey[]
+			{
+				new GradientColorKey(new Color(0f, 0.2f, 0f, 1f), 0.0f), new GradientColorKey(new Color(0f, 0.5f, 0f, 1f), 0.5f), new GradientColorKey(Color.green, 1.0f)
+			},
+			new GradientAlphaKey[]
+				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
+		);
+
 		gameManager = FindObjectOfType<GameManager>();
+
+		fireMagic = false;
+		waterMagic = false;
+		electricMagic = false;
+		mossMagic = false;
+
+		fireSymbols = new[]
+		{
+			"F"
+		};
+
+		waterSymbols = new[]
+		{
+			"T"
+		};
+
+		mossSymbols = new[]
+		{
+			"L"
+		};
+
+		symbol.text = "...";
 	}
 
 	void Update ()
@@ -166,10 +208,15 @@ public class SymbolDrawing : MonoBehaviour
 				{
 					currentGestureLineRenderer.colorGradient = waterColour;
 				}
-					
+				
 				else if (electricMagic)
 				{
 					currentGestureLineRenderer.colorGradient = electricColour;
+				}
+					
+				else if (mossMagic)
+				{
+					currentGestureLineRenderer.colorGradient = mossColour;
 				}
 
 				gestureLinesRenderer.Add(currentGestureLineRenderer);
@@ -218,19 +265,19 @@ public class SymbolDrawing : MonoBehaviour
 			gameManager.CalculateDamage();
 			recognized = true;
 			print(gestureResult.Score);
-			if (gestureResult.GestureClass == symbols[0])
+			if (gestureResult.GestureClass == fireSymbols[0])
 			{
 				spell = "Fireball";
 			}
 			
-			else if (gestureResult.GestureClass == symbols[1])
+			else if (gestureResult.GestureClass == waterSymbols[0])
 			{
 				spell = "Tidal Wave";
 			}
 
-			else
+			else if(gestureResult.GestureClass == mossSymbols[0])
 			{
-				spell = "Lightning Strike";
+				spell = "Lichen Overgrowth";
 			}
 			
 			notif.text = "Casted " + spell + "!";
@@ -265,6 +312,11 @@ public class SymbolDrawing : MonoBehaviour
 		fireMagic = true;
 		waterMagic = false;
 		electricMagic = false;
+		mossMagic = false;
+		
+		symbols = fireSymbols;
+
+		symbol.text = fireSymbols[0];
 	}
 
 	public void WaterMagic()
@@ -272,6 +324,11 @@ public class SymbolDrawing : MonoBehaviour
 		fireMagic = false;
 		waterMagic = true;
 		electricMagic = false;
+		mossMagic = false;
+		
+		symbols = waterSymbols;
+		symbol.text = waterSymbols[0];
+		
 	}
 
 	public void ElectricMagic()
@@ -279,5 +336,17 @@ public class SymbolDrawing : MonoBehaviour
 		fireMagic = false;
 		waterMagic = false;
 		electricMagic = true;
+		mossMagic = false;
+	}
+
+	public void MossMagic()
+	{
+		fireMagic = false;
+		waterMagic = false;
+		electricMagic = false;
+		mossMagic = true;
+
+		symbols = mossSymbols;
+		symbol.text = mossSymbols[0];
 	}
 }
