@@ -6,8 +6,9 @@ using System.IO;
 using System.Linq;
 using PDollarGestureRecognizer;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class SymbolDrawing : MonoBehaviour
+public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 	public Transform gestureOnScreenPrefab;
 
@@ -234,7 +235,7 @@ public class SymbolDrawing : MonoBehaviour
 		
 	}
 
-	private void OnMouseOver()
+	public void OnPointerEnter(PointerEventData eventData)
 	{
 		canDraw = true;
 
@@ -245,7 +246,7 @@ public class SymbolDrawing : MonoBehaviour
 		Cursor.visible = false;
 	}
 
-	private void OnMouseExit()
+	public void OnPointerExit(PointerEventData eventData)
 	{
 		canDraw = false;
 		Destroy(magicWand);
