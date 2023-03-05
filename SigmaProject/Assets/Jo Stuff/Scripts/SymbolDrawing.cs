@@ -7,8 +7,9 @@ using System.Linq;
 using PDollarGestureRecognizer;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class SymbolDrawing : MonoBehaviour
 {
 	public Transform gestureOnScreenPrefab;
 
@@ -61,12 +62,17 @@ public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 	public Texture2D mouseCursor;
 
 	private Vector2 hotspot = Vector2.zero;
+	
+	public Image symbol;
+	private Color symbolAlpha;
 
-	public TextMeshProUGUI symbol;
+	public Sprite fireSymbol;
+	public Sprite waterSymbol;
+	public Sprite mossSymbol;
 
 
 
-	void Start () {
+	 private void Start () {
 
 		platform = Application.platform;
 
@@ -141,15 +147,19 @@ public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
 		waterSymbols = new[]
 		{
-			"T"
+			"W"
 		};
 
 		mossSymbols = new[]
 		{
-			"L"
+			"M"
 		};
+		
+		symbolAlpha = Color.white;
+		symbolAlpha.a = 0f;
+		symbol.color = symbolAlpha;
+		symbol.sprite = null;
 
-		symbol.text = "...";
 	}
 
 	void Update ()
@@ -235,7 +245,7 @@ public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 		
 	}
 
-	public void OnPointerEnter(PointerEventData eventData)
+	private void OnMouseOver()
 	{
 		canDraw = true;
 
@@ -246,7 +256,7 @@ public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 		Cursor.visible = false;
 	}
 
-	public void OnPointerExit(PointerEventData eventData)
+	public void OnMouseExit()
 	{
 		canDraw = false;
 		Destroy(magicWand);
@@ -273,12 +283,12 @@ public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 			
 			else if (gestureResult.GestureClass == waterSymbols[0])
 			{
-				spell = "Tidal Wave";
+				spell = "Waterfall";
 			}
 
 			else if(gestureResult.GestureClass == mossSymbols[0])
 			{
-				spell = "Lichen Overgrowth";
+				spell = "Mossy Overgrowth";
 			}
 			
 			notif.text = "Casted " + spell + "!";
@@ -316,8 +326,10 @@ public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 		mossMagic = false;
 		
 		symbols = fireSymbols;
-
-		symbol.text = fireSymbols[0];
+		symbolAlpha.a = 1f;
+		symbol.color = symbolAlpha;
+		symbol.sprite = fireSymbol;
+		
 	}
 
 	public void WaterMagic()
@@ -328,8 +340,10 @@ public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 		mossMagic = false;
 		
 		symbols = waterSymbols;
-		symbol.text = waterSymbols[0];
-		
+		symbolAlpha.a = 1f;
+		symbol.color = symbolAlpha;
+		symbol.sprite = waterSymbol;
+
 	}
 
 	public void ElectricMagic()
@@ -344,10 +358,11 @@ public class SymbolDrawing : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 	{
 		fireMagic = false;
 		waterMagic = false;
-		electricMagic = false;
 		mossMagic = true;
 
 		symbols = mossSymbols;
-		symbol.text = mossSymbols[0];
+		symbolAlpha.a = 1f;
+		symbol.color = symbolAlpha;
+		symbol.sprite = mossSymbol;
 	}
 }
