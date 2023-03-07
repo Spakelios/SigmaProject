@@ -3,58 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using Cinemachine;
+using Cinemachine.Editor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject Cam1, Cam2, player, text, PB, BookPopUp, BookUI;
+    public GameObject Cam1, Cam2, BookPopUp, BookUI;
     public walk walk;
-    public Animator anim, ShaderAnim, StoneAnim;
-    public GameObject popup;
+    public Animator anim, StoneAnim;
     
-    public void ActivateScroll()
-    {
-
-        anim.Play("Interactive");  
-
-    }
-
-    public void YesBut()
-    {
-        anim.Play("Interactive");
-        Cam1.SetActive(true);
-        Cam2.SetActive(false);
-        popup.SetActive(false);
-        player.SetActive(false);
-        text.SetActive(true);
-        StartCoroutine(ShaderAnimation());
-
-    }
-
-    public void NoBut()
-    {
-        anim.Play("ScrollDown");
-        popup.SetActive(false);
-    }
-
-    IEnumerator ShaderAnimation()
-    {
-        ShaderAnim.Play("wo");
-
-        yield return new WaitForSeconds(10f);
-        
-        ShaderAnim.StopPlayback();
-    }
-
-    public void show()
-    {
-        PB.SetActive(true);
-        anim.Play("Interactive");
-    }
-
-
+    
     public void ChooseABook()
     {
         StartCoroutine(CAB());
@@ -72,10 +33,12 @@ public class ButtonController : MonoBehaviour
         Cam1.SetActive(true);
         BookPopUp.SetActive(true);
         BookUI.SetActive(true);
+        CineMachineShake.Instance.ScreenShake(1.5f, 0.4f);
         StoneAnim.Play("MovingPath");
 
         yield return new WaitForSeconds(7f);
 
+        CineMachineShake.Instance.ScreenShake(0,0);
         walk.speed = 10;
     }
 }

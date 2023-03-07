@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Cinemachine;
 
 public class HubWorldCameraController : MonoBehaviour
 {
@@ -10,12 +11,10 @@ public class HubWorldCameraController : MonoBehaviour
     public GameObject Cam1, Cam2;
     public GameObject canvas1;
     public GameObject tutorial1;
-    
 
     public GameObject bookStack;
-    public SpriteRenderer dark;
     
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -31,18 +30,19 @@ public class HubWorldCameraController : MonoBehaviour
     }
 
     public Animator anim;
+
     public IEnumerator LightsOn()
     {
         yield return new WaitForSeconds(3);
+
+        anim.Play("look");
+        bookStack.SetActive(true);
+
+        yield return new WaitForSeconds(2);
         
-            anim.Play("look");
-            bookStack.SetActive(true);
-
-            yield return new WaitForSeconds(2);
-
-            tutorial1.SetActive(true);
-            walk.speed = 20;
-            // dark.color = new Color(1f, 1f, 1f, .02f);
+        tutorial1.SetActive(true);
+        walk.speed = 20;
+        // dark.color = new Color(1f, 1f, 1f, .02f);
 
     }
 }
