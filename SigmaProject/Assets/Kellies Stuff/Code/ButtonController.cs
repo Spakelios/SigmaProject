@@ -14,6 +14,7 @@ public class ButtonController : MonoBehaviour
     public GameObject Cam1, Cam2, BookPopUp, BookUI;
     public walk walk;
     public Animator anim, StoneAnim;
+    public AudioSource Bridge;
     
     
     public void ChooseABook()
@@ -35,10 +36,12 @@ public class ButtonController : MonoBehaviour
         BookUI.SetActive(true);
         CineMachineShake.Instance.ScreenShake(1.5f, 0.4f);
         StoneAnim.Play("MovingPath");
+        Bridge.volume = 1;
 
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(10f);
 
         CineMachineShake.Instance.ScreenShake(0,0);
-        walk.speed = 10;
+        walk.speed = 20;
+        Bridge.volume = 0;
     }
 }
