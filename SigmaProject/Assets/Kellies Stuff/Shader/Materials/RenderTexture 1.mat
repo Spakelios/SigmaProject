@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_d682d24ca54043b183aebf2ef8e44084:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -44,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: 2ed31b41170e3dd40b138e6bc0ffc17a, type: 2}
+        m_Texture: {fileID: 2800000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,8 +80,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1607b20378b24c5e85428ff95e0618a3: 1738.3
-    - Vector1_a0cfd908f7c94ae9ad4a411db0524820: -53.58
+    - Vector1_1607b20378b24c5e85428ff95e0618a3: 1731.14
+    - Vector1_a0cfd908f7c94ae9ad4a411db0524820: 3056.6
+    - Vector1_d126e4afd4be4f0cb5946d9545f5d85f: 223.24
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -89,6 +94,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Fade: 0.65
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -105,6 +111,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_28f27262a1804c608d123be8ab41d42b: {r: 0.27664232, g: 0.1746173, b: 0.2830189, a: 0.105882354}
     - Vector3_4b9f7d56abfc4536b40cf80bcdb594d4: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
