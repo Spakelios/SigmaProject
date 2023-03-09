@@ -2,43 +2,90 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public enum BattleStates {Start, PlayerTurn, EnemyTurn}
+public enum BattleState {Start, PlayerTurn, EnemyTurn}
 
 public class BattleSystem : MonoBehaviour
 {
-    public GameObject player;
-    public walk playerMovement;
-    public GameObject enemy;
+    private GameObject player;
+    private GameObject enemy;
 
     public Transform playerPos;
     public Transform enemyPos;
 
-    public BattleStates state;
-    private void Awake()
+    public PlayerStats playerStats;
+    public EnemyStats enemyStats;
+
+    private BattleState battleState;
+
+    public TextMeshProUGUI battleText;
+
+    public Animator spellbook;
+    
+
+    private GameManager gameManager;
+    private SymbolDrawing symbolDrawing;
+    private void Start()
     {
-        player = GameObject.FindWithTag("Player");
-        playerMovement = player.GetComponent<walk>();
-        enabled = false;
+        gameManager = FindObjectOfType<GameManager>();
+        symbolDrawing = FindObjectOfType<SymbolDrawing>();
+        
+        battleState = BattleState.Start;
+        StartCoroutine(StartBattle());
+        
     }
 
-    private void OnEnable()
+    private IEnumerator StartBattle()
     {
+        player = Instantiate(playerStats.playerGameObject);
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        playerMovement.enabled = false;
-
-        state = BattleStates.Start;
-        BattleSetup();
-
-    }
-
-    private void BattleSetup()
-    {
+        player.GetComponent<walk>().enabled = false;
         player.transform.position = playerPos.position;
+        
+        enemy = Instantiate(enemyStats.enemyGameObject);
         enemy.transform.position = enemyPos.position;
-        
-        //insert everything about stats here
-        
-        
+
+        battleText.text = "A " + enemyStats.enemyName + " has appeared!";
+        yield return new WaitForSeconds(3);
+
+        battleState = BattleState.PlayerTurn;
+        yield return StartCoroutine(PlayerTurn());
+
     }
+
+    private IEnumerator PlayerTurn()
+    {
+        battleText.text = playerStats.playerName + "! It's your turn!";
+
+        yield return new WaitForSeconds(3);
+
+        battleText.text = "";
+        spellbook.SetTrigger("SlideUp");
+    }
+
+    public void ContinuePlayerTurn()
+    {
+        StartCoroutine(PlayerCastsSpell());
+    }
+
+    private IEnumerator PlayerCastsSpell()
+    {
+        spellbook.SetTrigger("SlideDown");
+        
+
+        yield return new WaitForSeconds(1);
+
+        battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
+        
+        yield return new WaitForSeconds(2);
+
+        battleText.text = gameManager.damageRank + " You dealt " + gameManager.damage + " damage to " + enemyStats.enemyName + "!";
+        
+        yield return new WaitForSeconds(3);
+
+        battleText.text = "ok that's it for now I'll finish the rest of the system either tomorrow or Friday";
+
+    }
+
 }

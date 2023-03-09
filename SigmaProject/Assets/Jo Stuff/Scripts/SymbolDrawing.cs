@@ -39,7 +39,7 @@ public class SymbolDrawing : MonoBehaviour
 	public Result gestureResult;
 
 	public TextMeshProUGUI notif;
-	private string spell;
+	public string spell;
 
 	private bool fireMagic;
 	private bool waterMagic;
@@ -72,7 +72,7 @@ public class SymbolDrawing : MonoBehaviour
 
 
 
-	 private void Start () {
+	 private void Awake () {
 
 		platform = Application.platform;
 
@@ -159,10 +159,11 @@ public class SymbolDrawing : MonoBehaviour
 		symbolAlpha.a = 0f;
 		symbol.color = symbolAlpha;
 		symbol.sprite = null;
+		canDraw = false;
 
-	}
+	 }
 
-	void Update ()
+	 void Update ()
 	{
 
 		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -207,8 +208,8 @@ public class SymbolDrawing : MonoBehaviour
 				
 				Transform tmpGesture = Instantiate(gestureOnScreenPrefab, transform.position, transform.rotation) as Transform;
 				currentGestureLineRenderer = tmpGesture.GetComponent<LineRenderer>();
-				currentGestureLineRenderer.startWidth = 0.1f;
-				currentGestureLineRenderer.endWidth = 0.1f;
+				currentGestureLineRenderer.startWidth = 0.05f;
+				currentGestureLineRenderer.endWidth = 0.05f;
 
 				if (fireMagic)
 				{
@@ -247,13 +248,21 @@ public class SymbolDrawing : MonoBehaviour
 
 	private void OnMouseOver()
 	{
-		canDraw = true;
 
-		if (magicWandSpawned) return;
-		magicWand = Instantiate(magicWandPrefab);
-		magicWandSpawned = true;
-		//Cursor.SetCursor(mouseCursor, hotspot, CursorMode.Auto);
-		Cursor.visible = false;
+		if (fireMagic || waterMagic || mossMagic)
+		{
+			canDraw = true;
+			
+			if (magicWandSpawned) return;
+			magicWand = Instantiate(magicWandPrefab);
+			magicWandSpawned = true;
+			//Cursor.SetCursor(mouseCursor, hotspot, CursorMode.Auto);
+			Cursor.visible = false;
+		}
+					
+
+		
+
 	}
 
 	public void OnMouseExit()
@@ -279,19 +288,22 @@ public class SymbolDrawing : MonoBehaviour
 			if (gestureResult.GestureClass == fireSymbols[0])
 			{
 				spell = "Fireball";
+				gameManager.spell = spell;
 			}
 			
 			else if (gestureResult.GestureClass == waterSymbols[0])
 			{
 				spell = "Waterfall";
+				gameManager.spell = spell;
 			}
 
 			else if(gestureResult.GestureClass == mossSymbols[0])
 			{
 				spell = "Mossy Overgrowth";
+				gameManager.spell = spell;
 			}
 			
-			notif.text = "Casted " + spell + "!";
+			//notif.text = "Casted " + spell + "!";
 			ClearLine();
 		}
 
@@ -364,5 +376,15 @@ public class SymbolDrawing : MonoBehaviour
 		symbolAlpha.a = 1f;
 		symbol.color = symbolAlpha;
 		symbol.sprite = mossSymbol;
+	}
+
+	public void BookDown()
+	{
+		canDraw = false;
+		fireMagic = false;
+		waterMagic = false;
+		mossMagic = false;
+
+		symbols = null;
 	}
 }

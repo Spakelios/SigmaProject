@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6a222678edf4547b46e1e80051ad4d, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: 2f6de674659983042a0ecc421986d0b1, type: 3}
+  m_Name: FireBook
   m_EditorClassIdentifier: 
-  playerName: 
-  position:
-  - -9.08365
-  - 1.8494818
-  playerGameObject: {fileID: 6506215946089883777, guid: 78f8a6dcf5b6a4141b06b3447ff32219, type: 3}
-  maxHealth: 0
-  health: 0
+  enemyName: Fire Book
+  enemyGameObject: {fileID: 1834727042373205511, guid: 347c4e0f467b6fc479a1263f123dcf5a, type: 3}
+  maxHealth: 100
+  health: 100

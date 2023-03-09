@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f6de674659983042a0ecc421986d0b1, type: 3}
-  m_Name: FireBook
+  m_Name: MossBook
   m_EditorClassIdentifier: 
-  enemyName: Spine Smasher
-  enemyGameObject: {fileID: 1834727042373205511, guid: 347c4e0f467b6fc479a1263f123dcf5a, type: 3}
+  enemyName: Moss Book
+  enemyGameObject: {fileID: 4133165242801090216, guid: aff0c3ca71b29ed49b1430796bfae4b7, type: 3}
   maxHealth: 100
   health: 100
