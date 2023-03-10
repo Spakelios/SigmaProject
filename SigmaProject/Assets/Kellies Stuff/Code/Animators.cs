@@ -24,8 +24,9 @@ public void stay()
 
 public void move()
 {
-    anim.Play("Player");
+
 }
+
 
 
 }
