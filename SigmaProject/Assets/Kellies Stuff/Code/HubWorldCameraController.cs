@@ -11,8 +11,7 @@ public class HubWorldCameraController : MonoBehaviour
     public GameObject Cam1, Cam2, player;
     public GameObject canvas1;
     public GameObject tutorial1;
-
-    public Animator Animator;
+    
     public GameObject bookStack;
     
     
@@ -20,8 +19,6 @@ public class HubWorldCameraController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(Load());
-            
             Cam1.SetActive(false);
             Cam2.SetActive(true);
             
@@ -32,14 +29,7 @@ public class HubWorldCameraController : MonoBehaviour
     }
 
     public Animator anim;
-
-    public IEnumerator Load()
-    {
-        Animator.SetTrigger("Start");
-
-        yield return new WaitForSeconds(3f);
-        
-    }
+    
     public IEnumerator LightsOn()
     {
         yield return new WaitForSeconds(3);
