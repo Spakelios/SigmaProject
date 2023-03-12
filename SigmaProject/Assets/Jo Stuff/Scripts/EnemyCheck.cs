@@ -26,13 +26,13 @@ public class EnemyCheck : MonoBehaviour
             //fireEnemyDead = false;
         }
         
-        else if (waterEnemyDead)
+        if (waterEnemyDead)
         {
             waterEnemy.SetActive(false);
             //waterEnemyDead = false;
         }
         
-        else if (mossEnemyDead)
+        if (mossEnemyDead)
         {
             mossEnemy.SetActive(false);
             //mossEnemyDead = false;

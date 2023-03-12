@@ -100,7 +100,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
         
-        print(multiplier);
         CalculateDamage();
     }
 
@@ -108,7 +107,7 @@ public class GameManager : MonoBehaviour
     {
         if (symbolDrawing.gestureResult.Score <= 0.75f)
         {
-            okDamage = Random.Range(60, 70);
+            okDamage = Random.Range(50, 60);
             damageRank = "It was an OK spell.";
             damage = (int) (okDamage * multiplier);
             /*
@@ -119,7 +118,7 @@ public class GameManager : MonoBehaviour
         
         else if (symbolDrawing.gestureResult.Score >= 0.76f && symbolDrawing.gestureResult.Score <= 0.85f)
         {
-            goodDamage = Random.Range(70, 80);
+            goodDamage = Random.Range(60, 70);
             damageRank = "It was a good spell.";
             damage = (int) (goodDamage * multiplier);
             /*
@@ -130,7 +129,7 @@ public class GameManager : MonoBehaviour
         
         else if (symbolDrawing.gestureResult.Score >= 0.86f && symbolDrawing.gestureResult.Score <= 0.94f)
         {
-            greatDamage = Random.Range(80, 90);
+            greatDamage = Random.Range(70, 80);
             damageRank = "It was a great spell!";
             damage = (int) (greatDamage * multiplier);
             /*
@@ -141,7 +140,7 @@ public class GameManager : MonoBehaviour
         
         else if (symbolDrawing.gestureResult.Score >= 0.95f)
         {
-            amazingDamage = Random.Range(90, 101);
+            amazingDamage = Random.Range(80, 91);
             damageRank = "It was an amazing spell!";
             damage = (int) (amazingDamage * multiplier);
             /*
@@ -169,6 +168,7 @@ public class GameManager : MonoBehaviour
 
     private void ContinueBattle()
     {
+        print("Multiplier: " + multiplier + " Damage: " + damage);
         battleSystem.ContinuePlayerTurn();
         symbolDrawing.BookDown();
     }

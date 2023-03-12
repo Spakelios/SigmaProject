@@ -354,7 +354,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cc13b65dcadcbb04fa54a3610d1c86e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1152,6 +1152,7 @@ MonoBehaviour:
   spell: 
   damageRank: 
   damage: 0
+  multiplier: 0
 --- !u!1001 &2062498476
 PrefabInstance:
   m_ObjectHideFlags: 0
