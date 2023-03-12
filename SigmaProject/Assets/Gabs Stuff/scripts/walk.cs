@@ -8,16 +8,25 @@ public class walk : MonoBehaviour
     float yMOV; 
     public float speed;
     Rigidbody2D rb;
+    private Animator animator;
     public GameObject CurrentLayer;
+
+    public bool canMove; //this bool is so I can stop the player from moving when the battle starts & they're in the battle scene
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        canMove = true;
+        animator = gameObject.GetComponent<Animator>();
+        animator.applyRootMotion = true;
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!canMove) return;
+        
         xMOV = Input.GetAxis("Horizontal") * speed * 0.1f;
         yMOV = Input.GetAxis("Vertical") * speed * 0.1f;
         /* if (xMOV != 0)

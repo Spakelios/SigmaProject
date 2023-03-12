@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
 
     public SymbolDrawing symbolDrawing;
     public BattleSystem battleSystem;
-    
+    public EnemyStats enemyStats;
+
     private int okDamage;
     private int goodDamage;
     private int greatDamage;
@@ -21,6 +23,14 @@ public class GameManager : MonoBehaviour
     public string damageRank;
     public int damage;
 
+    private string enemyType;
+
+    private float strongElement;
+    private float weakElement;
+    private int neutralElement;
+
+    public float multiplier;
+
 
 
 
@@ -28,6 +38,11 @@ public class GameManager : MonoBehaviour
     {
         symbolDrawing = FindObjectOfType<SymbolDrawing>();
         battleSystem = FindObjectOfType<BattleSystem>();
+
+        strongElement = 1.5f;
+        neutralElement = 1;
+        weakElement = 0.5f;
+
         /*
         damageText.text = "";
         damageType.text = "";
@@ -35,13 +50,67 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void TypeChart()
+    {
+        //strong element = 1.5x multiplier
+        //weak element = 0.5x multiplier
+        //same element = 1x multiplier
+
+        enemyType = enemyStats.enemyName switch
+        {
+            "Fire Book" => "Fire",
+            "Water Book" => "Water",
+            "Moss Book" => "Moss",
+            _ => enemyType
+        };
+
+        switch (enemyType)
+        {
+            //fire type chart
+            case "Fire" when spell == "Fireball":
+                multiplier = neutralElement;
+                break;
+            case "Fire" when spell == "Waterfall":
+                multiplier = strongElement;
+                break;
+            case "Fire" when spell == "Mossy Overgrowth":
+                multiplier = weakElement;
+                break;
+            
+            //water type chart
+            case "Water" when spell == "Fireball":
+                multiplier = weakElement;
+                break;
+            case "Water" when spell == "Waterfall":
+                multiplier = neutralElement;
+                break;
+            case "Water" when spell == "Mossy Overgrowth":
+                multiplier = strongElement;
+                break;
+               
+            //moss type chart
+            case "Moss" when spell == "Fireball":
+                multiplier = strongElement;
+                break;
+            case "Moss" when spell == "Waterfall":
+                multiplier = weakElement;
+                break;
+            case "Moss" when spell == "Mossy Overgrowth":
+                multiplier = neutralElement;
+                break;
+        }
+        
+        print(multiplier);
+        CalculateDamage();
+    }
+
     public void CalculateDamage()
     {
         if (symbolDrawing.gestureResult.Score <= 0.75f)
         {
-            okDamage = Random.Range(70, 76);
+            okDamage = Random.Range(60, 70);
             damageRank = "It was an OK spell.";
-            damage = okDamage;
+            damage = (int) (okDamage * multiplier);
             /*
             damageType.text = "OK spell";
             damageText.text = "Damage Dealt: " + okDamage;
@@ -50,9 +119,9 @@ public class GameManager : MonoBehaviour
         
         else if (symbolDrawing.gestureResult.Score >= 0.76f && symbolDrawing.gestureResult.Score <= 0.85f)
         {
-            goodDamage = Random.Range(76, 86);
+            goodDamage = Random.Range(70, 80);
             damageRank = "It was a good spell.";
-            damage = goodDamage;
+            damage = (int) (goodDamage * multiplier);
             /*
             damageType.text = "Good spell";
             damageText.text = "Damage Dealt: " + goodDamage;
@@ -61,9 +130,9 @@ public class GameManager : MonoBehaviour
         
         else if (symbolDrawing.gestureResult.Score >= 0.86f && symbolDrawing.gestureResult.Score <= 0.94f)
         {
-            greatDamage = Random.Range(86, 95);
+            greatDamage = Random.Range(80, 90);
             damageRank = "It was a great spell!";
-            damage = greatDamage;
+            damage = (int) (greatDamage * multiplier);
             /*
             damageType.text = "Great spell!";
             damageText.text = "Damage Dealt: " + greatDamage;
@@ -72,9 +141,9 @@ public class GameManager : MonoBehaviour
         
         else if (symbolDrawing.gestureResult.Score >= 0.95f)
         {
-            amazingDamage = Random.Range(95, 101);
+            amazingDamage = Random.Range(90, 101);
             damageRank = "It was an amazing spell!";
-            damage = amazingDamage;
+            damage = (int) (amazingDamage * multiplier);
             /*
             damageType.text = "Amazing spell!";
             damageText.text = "Damage Dealt: " + amazingDamage;

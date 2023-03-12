@@ -16,7 +16,7 @@ public class StatusManager : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            gameObject.transform.parent.GetComponent<walk>().enabled = false;
+            gameObject.transform.parent.GetComponent<walk>().canMove = false;
             gameObject.transform.parent.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             SetBattleData(other);
             LevelLoader.instance.LoadLevel("Battle Arena");

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Player
   position:
-  - -9.5
-  - 3.1043944
-  playerGameObject: {fileID: 6506215946089883777, guid: 78f8a6dcf5b6a4141b06b3447ff32219, type: 3}
-  maxHealth: 0
-  health: 0
+  - -9.519072
+  - 2.9825883
+  playerGameObject: {fileID: 7370797136050609357, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
+  maxHealth: 100
+  health: 100

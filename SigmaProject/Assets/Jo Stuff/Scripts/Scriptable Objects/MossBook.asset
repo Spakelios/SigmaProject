@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Moss Book
   enemyGameObject: {fileID: 4133165242801090216, guid: aff0c3ca71b29ed49b1430796bfae4b7, type: 3}
-  maxHealth: 100
-  health: 100
+  maxHealth: 200
+  health: 200

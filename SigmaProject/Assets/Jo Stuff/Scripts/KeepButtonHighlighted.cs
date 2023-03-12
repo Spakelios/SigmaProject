@@ -31,4 +31,11 @@ public class KeepButtonHighlighted : MonoBehaviour
         waterButton.interactable = true;
         mossButton.interactable = false;
     }
+
+    public void AllInteractable()
+    {
+        fireButton.interactable = true;
+        waterButton.interactable = true;
+        mossButton.interactable = true;
+    }
 }

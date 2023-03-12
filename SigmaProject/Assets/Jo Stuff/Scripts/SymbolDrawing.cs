@@ -282,7 +282,6 @@ public class SymbolDrawing : MonoBehaviour
 		
 		if (symbols.Contains(gestureResult.GestureClass))
 		{
-			gameManager.CalculateDamage();
 			recognized = true;
 			print(gestureResult.Score);
 			if (gestureResult.GestureClass == fireSymbols[0])
@@ -304,6 +303,7 @@ public class SymbolDrawing : MonoBehaviour
 			}
 			
 			//notif.text = "Casted " + spell + "!";
+			gameManager.TypeChart();
 			ClearLine();
 		}
 
@@ -386,5 +386,8 @@ public class SymbolDrawing : MonoBehaviour
 		mossMagic = false;
 
 		symbols = null;
+		symbolAlpha.a = 0f;
+		symbol.color = symbolAlpha;
+		symbol.sprite = null;
 	}
 }

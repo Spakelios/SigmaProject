@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Fire Book
   enemyGameObject: {fileID: 1834727042373205511, guid: 347c4e0f467b6fc479a1263f123dcf5a, type: 3}
-  maxHealth: 100
-  health: 100
+  maxHealth: 200
+  health: 200

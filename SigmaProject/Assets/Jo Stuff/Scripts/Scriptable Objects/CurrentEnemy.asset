@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6de674659983042a0ecc421986d0b1, type: 3}
   m_Name: CurrentEnemy
   m_EditorClassIdentifier: 
-  enemyName: 
-  enemyGameObject: {fileID: 0}
-  maxHealth: 0
-  health: 0
+  enemyName: Fire Book
+  enemyGameObject: {fileID: 1834727042373205511, guid: 347c4e0f467b6fc479a1263f123dcf5a, type: 3}
+  maxHealth: 200
+  health: 200
