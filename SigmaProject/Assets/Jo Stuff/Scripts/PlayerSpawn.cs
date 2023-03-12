@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerSpawn : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerSpawn : MonoBehaviour
     public PlayerStats playerStats;
     private GameObject player;
     private Vector3 playerPos;
+    private CinemachineVirtualCamera camera;
 
     public static bool firstSpawn = true;
     private Transform firstSpawnPos;
@@ -24,6 +26,9 @@ public class PlayerSpawn : MonoBehaviour
         {
             player = Instantiate(playerStats.playerGameObject, playerPos, Quaternion.identity);
         }
+
+        camera = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
+        camera.Follow = player.transform;
 
     }
 

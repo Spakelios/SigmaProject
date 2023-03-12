@@ -10,9 +10,9 @@ public class EnemyCheck : MonoBehaviour
     public GameObject waterEnemy;
     public GameObject mossEnemy;
 
-    public static bool fireEnemyDead;
-    public static bool waterEnemyDead;
-    public static bool mossEnemyDead;
+    public static bool fireEnemyDead = false;
+    public static bool waterEnemyDead = false;
+    public static bool mossEnemyDead = false;
     
 
 

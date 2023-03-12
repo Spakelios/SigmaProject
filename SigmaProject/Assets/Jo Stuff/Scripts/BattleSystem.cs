@@ -197,7 +197,8 @@ public class BattleSystem : MonoBehaviour
 
 
             yield return new WaitForSeconds(3);
-            LevelLoader.instance.LoadLevel("Battle System Test");
+            LevelLoader.instance.LoadLevel("gabScene");
+            //LevelLoader.instance.LoadLevel("Battle System Test");
         }
         
         else if (battleState == BattleState.Lose)
