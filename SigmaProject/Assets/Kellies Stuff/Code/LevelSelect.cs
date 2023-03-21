@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class LevelSelect : MonoBehaviour
 {
- public GameObject tutorial, tutorial2;
+ public GameObject tutorial, tutorial2, tutorial3;
  public Animator anim;
  private bool showBooks = false;
+ public walk Walk;
 
  public void OnTriggerStay2D(Collider2D other)
  {
@@ -21,6 +22,7 @@ public class LevelSelect : MonoBehaviour
   tutorial.SetActive(false);
   tutorial2.SetActive(false);
   showBooks = false;
+  Walk.speed = 0;
  }
 
  public void Update()
@@ -28,6 +30,15 @@ public class LevelSelect : MonoBehaviour
   if (showBooks && Input.GetKeyDown(KeyCode.F))
   {
    anim.Play("Books");
+
+   StartCoroutine(ui());
   }
+ }
+
+ IEnumerator ui()
+ {
+  yield return new WaitForSeconds(9f);
+  tutorial.SetActive(false);
+  tutorial3.SetActive(true);
  }
 }
