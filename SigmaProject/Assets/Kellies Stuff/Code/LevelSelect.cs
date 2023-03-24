@@ -22,7 +22,6 @@ public class LevelSelect : MonoBehaviour
   tutorial.SetActive(false);
   tutorial2.SetActive(false);
   showBooks = false;
-  Walk.speed = 0;
  }
 
  public void Update()
@@ -30,6 +29,7 @@ public class LevelSelect : MonoBehaviour
   if (showBooks && Input.GetKeyDown(KeyCode.F))
   {
    anim.Play("Books");
+   Walk.speed = 0;
 
    StartCoroutine(ui());
   }
