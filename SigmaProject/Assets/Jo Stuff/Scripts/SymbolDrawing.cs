@@ -163,7 +163,7 @@ public class SymbolDrawing : MonoBehaviour
 
 	 }
 
-	 void Update ()
+	 private void Update ()
 	{
 
 		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

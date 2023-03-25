@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    void Start()
+    private void Start()
     {
         symbolDrawing = FindObjectOfType<SymbolDrawing>();
         battleSystem = FindObjectOfType<BattleSystem>();
@@ -64,46 +64,27 @@ public class GameManager : MonoBehaviour
             _ => enemyType
         };
 
-        switch (enemyType)
+        multiplier = enemyType switch
         {
             //fire type chart
-            case "Fire" when spell == "Fireball":
-                multiplier = neutralElement;
-                break;
-            case "Fire" when spell == "Waterfall":
-                multiplier = strongElement;
-                break;
-            case "Fire" when spell == "Mossy Overgrowth":
-                multiplier = weakElement;
-                break;
-            
+            "Fire" when spell == "Fireball" => neutralElement,
+            "Fire" when spell == "Waterfall" => strongElement,
+            "Fire" when spell == "Mossy Overgrowth" => weakElement,
             //water type chart
-            case "Water" when spell == "Fireball":
-                multiplier = weakElement;
-                break;
-            case "Water" when spell == "Waterfall":
-                multiplier = neutralElement;
-                break;
-            case "Water" when spell == "Mossy Overgrowth":
-                multiplier = strongElement;
-                break;
-               
+            "Water" when spell == "Fireball" => weakElement,
+            "Water" when spell == "Waterfall" => neutralElement,
+            "Water" when spell == "Mossy Overgrowth" => strongElement,
             //moss type chart
-            case "Moss" when spell == "Fireball":
-                multiplier = strongElement;
-                break;
-            case "Moss" when spell == "Waterfall":
-                multiplier = weakElement;
-                break;
-            case "Moss" when spell == "Mossy Overgrowth":
-                multiplier = neutralElement;
-                break;
-        }
-        
+            "Moss" when spell == "Fireball" => strongElement,
+            "Moss" when spell == "Waterfall" => weakElement,
+            "Moss" when spell == "Mossy Overgrowth" => neutralElement,
+            _ => multiplier
+        };
+
         CalculateDamage();
     }
 
-    public void CalculateDamage()
+    private void CalculateDamage()
     {
         if (symbolDrawing.gestureResult.Score <= 0.75f)
         {
