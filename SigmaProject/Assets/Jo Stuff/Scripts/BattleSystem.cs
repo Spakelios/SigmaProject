@@ -32,9 +32,14 @@ public class BattleSystem : MonoBehaviour
     public StatHUD enemyStatHUD;
     
     public KeepButtonHighlighted buttons;
-    
-    
 
+    public bool mouseClick;
+
+    public List<string> enemyAttacks;
+    public int attackNumber;
+    public int attackChance;
+    private int enemyDamage;
+    
     private GameManager gameManager;
     //private SymbolDrawing symbolDrawing;
     private void Start()
@@ -47,6 +52,18 @@ public class BattleSystem : MonoBehaviour
         
         battleState = BattleState.Start;
         StartCoroutine(StartBattle());
+        mouseClick = false;
+        enemyAttacks = new List<string>();
+
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            mouseClick = true;
+        }
     }
 
     private void FixedUpdate()
@@ -63,16 +80,22 @@ public class BattleSystem : MonoBehaviour
 
         enemy = Instantiate(enemyStats.enemyGameObject, enemyPos.position, Quaternion.identity);
         
-
         playerStats.health = playerStats.maxHealth;
         enemyStats.health = enemyStats.maxHealth;
 
-        yield return new WaitForSeconds(0.01f);
+
+        yield return new WaitForEndOfFrame();
         walk.canMove = false;
 
-        battleText.text = "A " + enemyStats.enemyName + " has appeared!";
+        battleText.text = enemyStats.enemyName + " has appeared!";
         
-        yield return new WaitForSeconds(3);
+        enemyAttacks.Add(enemyStats.attack1);
+        enemyAttacks.Add(enemyStats.attack2);
+        enemyAttacks.Add(enemyStats.attack3);
+        
+        
+        yield return new WaitUntil(() => mouseClick);
+        mouseClick = false;
 
         battleState = BattleState.PlayerTurn;
         yield return StartCoroutine(PlayerTurn());
@@ -83,7 +106,8 @@ public class BattleSystem : MonoBehaviour
     {
         battleText.text = playerStats.playerName + "! It's your turn!";
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitUntil(() => mouseClick);
+        mouseClick = false;
 
         battleText.text = "";
         spellbook.SetTrigger("SlideUp");
@@ -98,15 +122,17 @@ public class BattleSystem : MonoBehaviour
     private IEnumerator PlayerCastsSpell()
     {
         spellbook.SetTrigger("SlideDown");
-        
+
 
         yield return new WaitForSeconds(1);
+        mouseClick = false;
 
         battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
         
-        yield return new WaitForSeconds(2);
+        yield return new WaitUntil(() => mouseClick);
+        mouseClick = false;
 
-        battleText.text = gameManager.damageRank + " You dealt " + gameManager.damage + " damage to " + enemyStats.enemyName + "!";
+        battleText.text = gameManager.damageRank + gameManager.damageEffectiveness + " You dealt " + gameManager.damage + " damage to " + enemyStats.enemyName + "!";
 
         if (enemyStats.health >= gameManager.damage)
         {
@@ -118,7 +144,8 @@ public class BattleSystem : MonoBehaviour
             enemyStats.health -= enemyStats.health;
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitUntil(() => mouseClick);
+        mouseClick = false;
 
         if (enemyStats.health <= 0)
         {
@@ -138,12 +165,28 @@ public class BattleSystem : MonoBehaviour
     {
         battleText.text = "It's " + enemyStats.enemyName + "'s turn!";
 
-        yield return new WaitForSeconds(2);
+        attackChance = Random.Range(1, 11);
 
-        battleText.text = enemyStats.enemyName + " bites you!";
+        yield return new WaitUntil(() => mouseClick);
+        mouseClick = false;
 
-        yield return new WaitForSeconds(2);
-        int enemyDamage = Random.Range(20, 30);
+        if (attackChance <= 7) //70% chance to hit
+        {
+            attackNumber = Random.Range(0, 3);
+
+            battleText.text = enemyStats.enemyName + " " + enemyAttacks[attackNumber];
+            enemyDamage = Random.Range(20, 30);
+        }
+
+        else //30% chance to miss
+        {
+            enemyDamage = 0;
+
+            battleText.text = enemyStats.enemyName + " tries to attack you, but it missed!";
+        }
+        
+        yield return new WaitUntil(() => mouseClick);
+        mouseClick = false;
         battleText.text = "It dealt " + enemyDamage + " damage to you!";
 
         if (playerStats.health >= enemyDamage)
@@ -156,7 +199,8 @@ public class BattleSystem : MonoBehaviour
             playerStats.health -= playerStats.health;
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitUntil(() => mouseClick);
+        mouseClick = false;
 
         if (playerStats.health <= 0)
         {
@@ -196,7 +240,8 @@ public class BattleSystem : MonoBehaviour
             PlayerSpawn.firstSpawn = false;
 
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitUntil(() => mouseClick);
+            mouseClick = false;
             LevelLoader.instance.LoadLevel("gabScene");
             //LevelLoader.instance.LoadLevel("Battle System Test");
         }
@@ -206,7 +251,9 @@ public class BattleSystem : MonoBehaviour
             battleText.text = "You lost... Time to try again!";
             Destroy(player);
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitUntil(() => mouseClick);
+            mouseClick = false;
+            
             LevelLoader.instance.LoadLevel("Battle Arena");
 
         }

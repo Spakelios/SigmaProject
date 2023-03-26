@@ -10,5 +10,8 @@ public class EnemyStats : ScriptableObject
     public GameObject enemyGameObject;
     public float maxHealth;
     public float health;
-    
+    public string attack1;
+    public string attack2;
+    public string attack3;
+
 }

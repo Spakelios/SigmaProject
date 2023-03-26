@@ -16,3 +16,6 @@ MonoBehaviour:
   enemyGameObject: {fileID: 4096974724426748224, guid: f28342dc19f6afa4d8c51b1d5d47fe69, type: 3}
   maxHealth: 200
   health: 200
+  attack1: flaps its wings & gives you a paper cut!
+  attack2: blows water into your eyes!
+  attack3: slaps you!

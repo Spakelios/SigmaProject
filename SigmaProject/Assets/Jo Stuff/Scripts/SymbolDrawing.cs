@@ -280,7 +280,7 @@ public class SymbolDrawing : MonoBehaviour
 
 		gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 		
-		if (symbols.Contains(gestureResult.GestureClass))
+		if (symbols.Contains(gestureResult.GestureClass) && gestureResult.Score >= 0.5f)
 		{
 			recognized = true;
 			print(gestureResult.Score);

@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public string spell;
     public string damageRank;
     public int damage;
+    public string damageEffectiveness;
 
     private string enemyType;
 
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     private int neutralElement;
 
     public float multiplier;
+    
 
 
 
@@ -80,16 +82,16 @@ public class GameManager : MonoBehaviour
             "Moss" when spell == "Mossy Overgrowth" => neutralElement,
             _ => multiplier
         };
-
+        
         CalculateDamage();
     }
 
     private void CalculateDamage()
     {
-        if (symbolDrawing.gestureResult.Score <= 0.75f)
+        if (symbolDrawing.gestureResult.Score <= 0.6f) //50% - 60%
         {
-            okDamage = Random.Range(50, 60);
-            damageRank = "It was an OK spell.";
+            okDamage = Random.Range(50, 61);
+            damageRank = "It was an OK spell";
             damage = (int) (okDamage * multiplier);
             /*
             damageType.text = "OK spell";
@@ -97,10 +99,10 @@ public class GameManager : MonoBehaviour
             */
         }
         
-        else if (symbolDrawing.gestureResult.Score >= 0.76f && symbolDrawing.gestureResult.Score <= 0.85f)
+        else if (symbolDrawing.gestureResult.Score >= 0.61f && symbolDrawing.gestureResult.Score <= 0.7f) //61% - 70%
         {
-            goodDamage = Random.Range(60, 70);
-            damageRank = "It was a good spell.";
+            goodDamage = Random.Range(61, 71);
+            damageRank = "It was a good spell";
             damage = (int) (goodDamage * multiplier);
             /*
             damageType.text = "Good spell";
@@ -108,10 +110,10 @@ public class GameManager : MonoBehaviour
             */
         }
         
-        else if (symbolDrawing.gestureResult.Score >= 0.86f && symbolDrawing.gestureResult.Score <= 0.94f)
+        else if (symbolDrawing.gestureResult.Score >= 0.71f && symbolDrawing.gestureResult.Score <= 0.8f) //71% - 80%
         {
-            greatDamage = Random.Range(70, 80);
-            damageRank = "It was a great spell!";
+            greatDamage = Random.Range(71, 81);
+            damageRank = "It was a great spell";
             damage = (int) (greatDamage * multiplier);
             /*
             damageType.text = "Great spell!";
@@ -119,10 +121,10 @@ public class GameManager : MonoBehaviour
             */
         }
         
-        else if (symbolDrawing.gestureResult.Score >= 0.95f)
+        else if (symbolDrawing.gestureResult.Score >= 0.81f) //81% or higher
         {
-            amazingDamage = Random.Range(80, 91);
-            damageRank = "It was an amazing spell!";
+            amazingDamage = Random.Range(81, 91);
+            damageRank = "It was an amazing spell";
             damage = (int) (amazingDamage * multiplier);
             /*
             damageType.text = "Amazing spell!";
@@ -140,16 +142,36 @@ public class GameManager : MonoBehaviour
         damageType.text = "";
         */
 
-        spell = "a spell";
+        spell = "some sort of spell";
         damageRank = "But something went wrong! Your drawing didn't look right...";
         damage = 0;
+        multiplier = 0;
         
         ContinueBattle();
     }
 
     private void ContinueBattle()
     {
-        print("Multiplier: " + multiplier + " Damage: " + damage);
+        //print("Multiplier: " + multiplier + " Damage: " + damage);
+        if (multiplier == weakElement)
+        {
+            damageEffectiveness = ", but it isn't very effective.";
+        }
+        
+        else if (multiplier == neutralElement)
+        {
+            damageEffectiveness = ", and it's somewhat effective.";
+        }
+        
+        else if (multiplier == strongElement)
+        {
+            damageEffectiveness = ", and it's super effective!";
+        }
+
+        else
+        {
+            damageEffectiveness = null;
+        }
         battleSystem.ContinuePlayerTurn();
         symbolDrawing.BookDown();
     }

@@ -38,7 +38,10 @@ public class StatusManager : MonoBehaviour
         enemyStats.enemyGameObject = status.enemyGameObject;
         enemyStats.maxHealth = status.maxHealth;
         enemyStats.health = status.health;
-        
+        enemyStats.attack1 = status.attack1;
+        enemyStats.attack2 = status.attack2;
+        enemyStats.attack3 = status.attack3;
+
         //enemyStats = status;
 
     }

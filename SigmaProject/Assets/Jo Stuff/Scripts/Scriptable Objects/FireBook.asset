@@ -16,3 +16,6 @@ MonoBehaviour:
   enemyGameObject: {fileID: 1834727042373205511, guid: 347c4e0f467b6fc479a1263f123dcf5a, type: 3}
   maxHealth: 200
   health: 200
+  attack1: snaps at your hand, its pages are red hot!
+  attack2: cracks its spine to intimidate you!
+  attack3: spits a fireball in your direction!
