@@ -70,7 +70,23 @@ public class SymbolDrawing : MonoBehaviour
 	public Sprite waterSymbol;
 	public Sprite mossSymbol;
 
+	public Transform drawAreaPos1;
+	public Transform drawAreaPos2;
 
+
+
+	private void Start()
+	{
+		if (!BattleSystem.firstBattleDone)
+		{
+			gameObject.transform.position = drawAreaPos1.position;
+		}
+
+		else
+		{
+			gameObject.transform.position = drawAreaPos2.position;
+		}
+	}
 
 	 private void Awake () {
 

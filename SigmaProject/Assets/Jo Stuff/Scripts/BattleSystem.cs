@@ -16,8 +16,14 @@ public class BattleSystem : MonoBehaviour
 
     public walk walk;
 
-    public Transform playerPos;
-    public Transform enemyPos;
+    public Transform playerPos1;
+    public Transform enemyPos1;
+
+    public Transform playerPos2;
+    public Transform enemyPos2;
+
+    public Transform camPos1;
+    public Transform camPos2;
 
     public PlayerStats playerStats;
     public EnemyStats enemyStats;
@@ -41,6 +47,8 @@ public class BattleSystem : MonoBehaviour
     private int enemyDamage;
     
     private GameManager gameManager;
+
+    public static bool firstBattleDone = false;
     //private SymbolDrawing symbolDrawing;
     private void Start()
     {
@@ -74,12 +82,25 @@ public class BattleSystem : MonoBehaviour
 
     private IEnumerator StartBattle()
     {
-        player = Instantiate(playerStats.playerGameObject, playerPos.position, Quaternion.identity);
-        walk = player.GetComponent<walk>();
-        //gameObject.transform.parent.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        if (!firstBattleDone)
+        {
+            player = Instantiate(playerStats.playerGameObject, playerPos1.position, Quaternion.identity);
+            //gameObject.transform.parent.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-        enemy = Instantiate(enemyStats.enemyGameObject, enemyPos.position, Quaternion.identity);
+            enemy = Instantiate(enemyStats.enemyGameObject, enemyPos1.position, Quaternion.identity);
+            Camera.main.transform.position = camPos1.position;
+        }
+
+        else
+        {
+            player = Instantiate(playerStats.playerGameObject, playerPos2.position, Quaternion.identity);
+            //gameObject.transform.parent.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+            enemy = Instantiate(enemyStats.enemyGameObject, enemyPos2.position, Quaternion.identity);
+            Camera.main.transform.position = camPos2.position;
+        }
         
+        walk = player.GetComponent<walk>();
         playerStats.health = playerStats.maxHealth;
         enemyStats.health = enemyStats.maxHealth;
 
@@ -238,6 +259,7 @@ public class BattleSystem : MonoBehaviour
             Destroy(enemy);
 
             PlayerSpawn.firstSpawn = false;
+            firstBattleDone = true;
 
 
             yield return new WaitUntil(() => mouseClick);
