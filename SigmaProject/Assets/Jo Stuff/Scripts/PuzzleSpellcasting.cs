@@ -64,6 +64,8 @@ public class PuzzleSpellcasting : MonoBehaviour
 	public Sprite mossSymbol;
 
 	public GameObject player;
+
+	public GameObject book2;
 	
 	 private void Awake () {
 
@@ -142,6 +144,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 		symbol.sprite = null;
 		canDraw = false;
 		
+
 	 }
 
 	 private void Update ()
@@ -149,7 +152,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 		if(player == null)
         {
 			player = GameObject.FindGameObjectWithTag("Player");
-		}
+        }
 
 		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -162,6 +165,9 @@ public class PuzzleSpellcasting : MonoBehaviour
 				virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
 			}
 		}
+
+		gameObject.transform.position = book2.transform.position;
+		
 		
 		if(!canDraw)
 			return;
