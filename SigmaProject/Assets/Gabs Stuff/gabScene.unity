@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 68462210}
   - component: {fileID: 68462209}
   - component: {fileID: 68462214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BracerOff (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1619754020}
-  - {fileID: 992413843}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1895,7 +1894,7 @@ GameObject:
   - component: {fileID: 869996670}
   - component: {fileID: 869996669}
   - component: {fileID: 869996674}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BracerOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,11 +2223,7 @@ MonoBehaviour:
   waterSymbol: {fileID: 21300000, guid: 7b3cc86642cacaf45839c6fc2d50cab6, type: 3}
   mossSymbol: {fileID: 21300000, guid: fdd29deb70df17d4291028c00ff75308, type: 3}
   player: {fileID: 0}
---- !u!4 &992413843 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
-  m_PrefabInstance: {fileID: 1503109917}
-  m_PrefabAsset: {fileID: 0}
+  book2: {fileID: 1198273894}
 --- !u!1 &1010477403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,6 +2775,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1198273894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1198273895}
+  m_Layer: 5
+  m_Name: DrawAreaPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1198273895
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198273894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1347762385}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 73.7, y: -19}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1217442155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,7 +3474,7 @@ GameObject:
   - component: {fileID: 1355692160}
   - component: {fileID: 1355692159}
   - component: {fileID: 1355692164}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BracerOff (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3830,7 +3860,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 513212433}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4504448783719306369, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_Enabled
@@ -3838,7 +3868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_LocalScale.x
@@ -3850,15 +3880,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6755996
+      value: -1.6743999
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3072
+      value: -3.3572
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3908,7 +3938,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draw Area
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4504448783719306369, guid: 69344a890aa04e14889486db830f61bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69344a890aa04e14889486db830f61bc, type: 3}
 --- !u!1 &1538585906
 GameObject:

@@ -64,8 +64,11 @@ public class PuzzleSpellcasting : MonoBehaviour
 	public Sprite mossSymbol;
 
 	public GameObject player;
-	
-	 private void Awake () {
+
+	public GameObject book2;
+
+
+		 private void Awake () {
 
 		platform = Application.platform;
 
@@ -142,6 +145,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 		symbol.sprite = null;
 		canDraw = false;
 		
+
 	 }
 
 	 private void Update ()
@@ -149,7 +153,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 		if(player == null)
         {
 			player = GameObject.FindGameObjectWithTag("Player");
-		}
+        }
 
 		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -162,6 +166,9 @@ public class PuzzleSpellcasting : MonoBehaviour
 				virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
 			}
 		}
+
+		gameObject.transform.position = book2.transform.position;
+		
 		
 		if(!canDraw)
 			return;
@@ -266,6 +273,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 			{
 				//put in stuff for fire spell here!
 				spell = "Fire";
+				player.SendMessage("CastSpell", spell);
 				print(spell);
 			}
 			
@@ -273,6 +281,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 			{
 				//put in stuff for water spell here!
 				spell = "Water";
+				player.SendMessage("CastSpell", spell);
 				print(spell);
 			}
 
@@ -280,6 +289,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 			{
 				//put in stuff for moss spell here!
 				spell = "Moss";
+				player.SendMessage("CastSpell", spell);
 				print(spell);
 			}
 			
