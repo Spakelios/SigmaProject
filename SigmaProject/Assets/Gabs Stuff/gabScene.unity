@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 68462210}
   - component: {fileID: 68462209}
   - component: {fileID: 68462214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BracerOff (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1894,7 +1894,7 @@ GameObject:
   - component: {fileID: 869996670}
   - component: {fileID: 869996669}
   - component: {fileID: 869996674}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BracerOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3474,7 +3474,7 @@ GameObject:
   - component: {fileID: 1355692160}
   - component: {fileID: 1355692159}
   - component: {fileID: 1355692164}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BracerOff (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3938,7 +3938,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draw Area
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4504448783719306369, guid: 69344a890aa04e14889486db830f61bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69344a890aa04e14889486db830f61bc, type: 3}
 --- !u!1 &1538585906
 GameObject:
