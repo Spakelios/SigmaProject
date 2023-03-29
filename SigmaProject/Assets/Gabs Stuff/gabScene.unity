@@ -2641,6 +2641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MossEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4133165242801090216, guid: aff0c3ca71b29ed49b1430796bfae4b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4133165242801090217, guid: aff0c3ca71b29ed49b1430796bfae4b7, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -4955,6 +4959,10 @@ PrefabInstance:
     - target: {fileID: 129230099400989607, guid: 786999cc5df9d3c4f841707036ded7e5, type: 3}
       propertyPath: m_Name
       value: EnemyDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 129230099400989607, guid: 786999cc5df9d3c4f841707036ded7e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 786999cc5df9d3c4f841707036ded7e5, type: 3}

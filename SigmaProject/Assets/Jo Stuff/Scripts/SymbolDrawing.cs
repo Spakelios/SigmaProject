@@ -16,6 +16,7 @@ public class SymbolDrawing : MonoBehaviour
 	private List<Gesture> trainingSet = new List<Gesture>();
 
 	private List<Point> points = new List<Point>();
+	private List<Point> pointsToClear = new List<Point>();
 	private int strokeId = -1;
 
 	private Vector3 virtualKeyPosition = Vector2.zero;
@@ -23,7 +24,7 @@ public class SymbolDrawing : MonoBehaviour
 	private RuntimePlatform platform;
 	private int vertexCount = 0;
 
-	private List<LineRenderer> gestureLinesRenderer = new List<LineRenderer>();
+	public List<LineRenderer> gestureLinesRenderer = new List<LineRenderer>();
 	private LineRenderer currentGestureLineRenderer;
 	
 	private bool recognized;
@@ -40,6 +41,7 @@ public class SymbolDrawing : MonoBehaviour
 
 	public TextMeshProUGUI notif;
 	public string spell;
+	private Transform tmpGesture;
 
 	private bool fireMagic;
 	private bool waterMagic;
@@ -222,7 +224,7 @@ public class SymbolDrawing : MonoBehaviour
 
 				++strokeId;
 				
-				Transform tmpGesture = Instantiate(gestureOnScreenPrefab, transform.position, transform.rotation) as Transform;
+				tmpGesture = Instantiate(gestureOnScreenPrefab, transform.position, transform.rotation);
 				currentGestureLineRenderer = tmpGesture.GetComponent<LineRenderer>();
 				currentGestureLineRenderer.startWidth = 0.05f;
 				currentGestureLineRenderer.endWidth = 0.05f;
@@ -408,5 +410,23 @@ public class SymbolDrawing : MonoBehaviour
 		symbolAlpha.a = 0f;
 		symbol.color = symbolAlpha;
 		symbol.sprite = null;
+	}
+
+	public void UndoPreviousLine()
+	{
+		gestureLinesRenderer.RemoveAt(gestureLinesRenderer.Count - 1);
+
+		foreach (Point point in points.Where(point => point.StrokeID == strokeId))
+		{
+			pointsToClear.Add(point);
+		}
+
+		points.RemoveAll(point => pointsToClear.Contains(point));
+		pointsToClear.Clear();
+		strokeId--;
+
+		currentGestureLineRenderer.SetVertexCount(0);
+		Destroy(currentGestureLineRenderer);
+		currentGestureLineRenderer = gestureLinesRenderer[gestureLinesRenderer.Count - 1].GetComponent<LineRenderer>();
 	}
 }
