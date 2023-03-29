@@ -66,8 +66,9 @@ public class PuzzleSpellcasting : MonoBehaviour
 	public GameObject player;
 
 	public GameObject book2;
-	
-	 private void Awake () {
+
+
+		 private void Awake () {
 
 		platform = Application.platform;
 
@@ -272,6 +273,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 			{
 				//put in stuff for fire spell here!
 				spell = "Fire";
+				player.SendMessage("CastSpell", spell);
 				print(spell);
 			}
 			
@@ -279,6 +281,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 			{
 				//put in stuff for water spell here!
 				spell = "Water";
+				player.SendMessage("CastSpell", spell);
 				print(spell);
 			}
 
@@ -286,6 +289,7 @@ public class PuzzleSpellcasting : MonoBehaviour
 			{
 				//put in stuff for moss spell here!
 				spell = "Moss";
+				player.SendMessage("CastSpell", spell);
 				print(spell);
 			}
 			
