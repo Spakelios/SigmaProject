@@ -49,6 +49,11 @@ public class BattleSystem : MonoBehaviour
     private GameManager gameManager;
 
     public static bool firstBattleDone = false;
+
+    public AudioSource battleMusic;
+    public AudioSource victoryJingle;
+    public AudioSource defeatJingle;
+    
     //private SymbolDrawing symbolDrawing;
     private void Start()
     {
@@ -242,6 +247,8 @@ public class BattleSystem : MonoBehaviour
         if (battleState == BattleState.Win)
         {
             battleText.text = "You won!";
+            battleMusic.Stop();
+            victoryJingle.Play();
             
             switch (enemyStats.enemyName)
             {
@@ -271,6 +278,8 @@ public class BattleSystem : MonoBehaviour
         else if (battleState == BattleState.Lose)
         {
             battleText.text = "You lost... Time to try again!";
+            battleMusic.Stop();
+            defeatJingle.Play();
             Destroy(player);
 
             yield return new WaitUntil(() => mouseClick);
