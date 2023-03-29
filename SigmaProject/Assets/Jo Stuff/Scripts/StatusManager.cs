@@ -11,6 +11,7 @@ public class StatusManager : MonoBehaviour
 
 
 
+
     public void OnTriggerEnter2D(Collider2D other)
     {
 

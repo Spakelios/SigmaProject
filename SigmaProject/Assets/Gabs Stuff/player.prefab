@@ -72,6 +72,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: e7f3e01b922a62b46b3d19958a03fb04, type: 2}
   enemyStats: {fileID: 11400000, guid: b1d5f8d6e030a824498a4efb28af0f9b, type: 2}
+  overworldMusic: {fileID: 0}
+  encounterSound: {fileID: 0}
 --- !u!1 &7370797135420394988
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f565cc2ea69196459de48490548483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
   CurrentLayer: {fileID: 0}
   canMove: 1
 --- !u!61 &7370797136050609361

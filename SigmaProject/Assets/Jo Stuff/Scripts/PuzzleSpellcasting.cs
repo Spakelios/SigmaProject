@@ -9,7 +9,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SymbolDrawing : MonoBehaviour
+public class PuzzleSpellcasting : MonoBehaviour
 {
 	public Transform gestureOnScreenPrefab;
 
@@ -36,32 +36,25 @@ public class SymbolDrawing : MonoBehaviour
 	private string[] waterSymbols;
 	private string[] mossSymbols;
 
-	public Result gestureResult;
-
-	public TextMeshProUGUI notif;
+	private Result gestureResult;
+	
 	public string spell;
 
-	private bool fireMagic;
-	private bool waterMagic;
-	private bool electricMagic;
-	private bool mossMagic;
+	public bool fireMagic;
+	public bool waterMagic;
+	public bool mossMagic;
 
 	private Gradient fireColour;
 	private Gradient waterColour;
-	private Gradient electricColour;
 	private Gradient mossColour;
-
-	private GameManager gameManager;
+	
 
 	public GameObject magicWandPrefab;
 	private GameObject magicWand;
 	private bool magicWandSpawned;
 
 	public Vector2 mousePos;
-
-	//public Texture2D mouseCursor;
-
-	//private Vector2 hotspot = Vector2.zero;
+	
 	
 	public Image symbol;
 	private Color symbolAlpha;
@@ -69,25 +62,8 @@ public class SymbolDrawing : MonoBehaviour
 	public Sprite fireSymbol;
 	public Sprite waterSymbol;
 	public Sprite mossSymbol;
-
-	public Transform drawAreaPos1;
-	public Transform drawAreaPos2;
-
-
-
-	private void Start()
-	{
-		if (!BattleSystem.firstBattleDone)
-		{
-			gameObject.transform.position = drawAreaPos1.position;
-		}
-
-		else
-		{
-			gameObject.transform.position = drawAreaPos2.position;
-		}
-	}
-
+	
+	
 	 private void Awake () {
 
 		platform = Application.platform;
@@ -129,16 +105,6 @@ public class SymbolDrawing : MonoBehaviour
 				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
 		);
 
-		electricColour = new Gradient();
-		electricColour.SetKeys(
-			new GradientColorKey[]
-			{
-				new GradientColorKey(new Color(0.3f, 0f, 0.5f, 1f), 0.0f), new GradientColorKey(new Color(0.5f, 0f, 1f, 1f), 0.5f), new GradientColorKey(Color.magenta, 1.0f)
-			},
-			new GradientAlphaKey[]
-				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
-		);
-
 		mossColour = new Gradient();
 		mossColour.SetKeys(
 			new GradientColorKey[]
@@ -148,12 +114,10 @@ public class SymbolDrawing : MonoBehaviour
 			new GradientAlphaKey[]
 				{new GradientAlphaKey(1f, 0.0f), new GradientAlphaKey(1f, 0.5f), new GradientAlphaKey(1f, 1f)}
 		);
-
-		gameManager = FindObjectOfType<GameManager>();
+		
 
 		fireMagic = false;
 		waterMagic = false;
-		electricMagic = false;
 		mossMagic = false;
 
 		fireSymbols = new[]
@@ -236,12 +200,7 @@ public class SymbolDrawing : MonoBehaviour
 				{
 					currentGestureLineRenderer.colorGradient = waterColour;
 				}
-				
-				else if (electricMagic)
-				{
-					currentGestureLineRenderer.colorGradient = electricColour;
-				}
-					
+
 				else if (mossMagic)
 				{
 					currentGestureLineRenderer.colorGradient = mossColour;
@@ -272,7 +231,6 @@ public class SymbolDrawing : MonoBehaviour
 			if (magicWandSpawned) return;
 			magicWand = Instantiate(magicWandPrefab);
 			magicWandSpawned = true;
-			//Cursor.SetCursor(mouseCursor, hotspot, CursorMode.Auto);
 			Cursor.visible = false;
 		}
 					
@@ -286,7 +244,6 @@ public class SymbolDrawing : MonoBehaviour
 		canDraw = false;
 		Destroy(magicWand);
 		magicWandSpawned = false;
-		//Cursor.SetCursor(null, hotspot, CursorMode.Auto);
 		Cursor.visible = true;
 	}
 
@@ -296,44 +253,45 @@ public class SymbolDrawing : MonoBehaviour
 
 		gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 		
-		if (symbols.Contains(gestureResult.GestureClass) && gestureResult.Score >= 0.5f)
+		if (symbols.Contains(gestureResult.GestureClass))
 		{
 			recognized = true;
-			print(gestureResult.Score);
+			//print(gestureResult.Score);
 			if (gestureResult.GestureClass == fireSymbols[0])
 			{
-				spell = "Fireball";
-				gameManager.spell = spell;
+				//put in stuff for fire spell here!
+				spell = "Fire";
+				print(spell);
 			}
 			
 			else if (gestureResult.GestureClass == waterSymbols[0])
 			{
-				spell = "Waterfall";
-				gameManager.spell = spell;
+				//put in stuff for water spell here!
+				spell = "Water";
+				print(spell);
 			}
 
 			else if(gestureResult.GestureClass == mossSymbols[0])
 			{
-				spell = "Mossy Overgrowth";
-				gameManager.spell = spell;
+				//put in stuff for moss spell here!
+				spell = "Moss";
+				print(spell);
 			}
 			
 			//notif.text = "Casted " + spell + "!";
-			gameManager.TypeChart();
 			ClearLine();
 		}
 
 		else
 		{
 			recognized = false;
-			notif.text = "Spell failed!";
+			print("Failed");
 			ClearLine();
-			gameManager.SpellFailed();
 		}
 		
 	}
 
-	private void ClearLine()
+	public void ClearLine()
 	{
 		recognized = false;
 		strokeId = -1;
@@ -351,7 +309,6 @@ public class SymbolDrawing : MonoBehaviour
 		ClearLine();
 		fireMagic = true;
 		waterMagic = false;
-		electricMagic = false;
 		mossMagic = false;
 		
 		symbols = fireSymbols;
@@ -366,7 +323,6 @@ public class SymbolDrawing : MonoBehaviour
 		ClearLine();
 		fireMagic = false;
 		waterMagic = true;
-		electricMagic = false;
 		mossMagic = false;
 		
 		symbols = waterSymbols;
@@ -375,15 +331,7 @@ public class SymbolDrawing : MonoBehaviour
 		symbol.sprite = waterSymbol;
 
 	}
-
-	public void ElectricMagic()
-	{
-		fireMagic = false;
-		waterMagic = false;
-		electricMagic = true;
-		mossMagic = false;
-	}
-
+	
 	public void MossMagic()
 	{
 		ClearLine();
@@ -397,8 +345,9 @@ public class SymbolDrawing : MonoBehaviour
 		symbol.sprite = mossSymbol;
 	}
 
-	public void BookDown()
+	public void CloseBookPage()
 	{
+		ClearLine();
 		canDraw = false;
 		fireMagic = false;
 		waterMagic = false;

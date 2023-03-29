@@ -7,6 +7,7 @@ public class BookController : MonoBehaviour
    public GameObject page1, page2, page3;
    public GameObject spine;
 
+
    public void Page2Show()
    {
       page1.SetActive(false);
