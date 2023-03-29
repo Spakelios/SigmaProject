@@ -27,4 +27,13 @@ public class interact : MonoBehaviour
         canInteract = false;
         interactableObject = null;
     }
+
+
+    public void CastSpell(string spell)
+    {
+        if(canInteract == true)
+        {
+            interactableObject.SendMessage("onSpellCast", spell);
+        }
+    }
 }

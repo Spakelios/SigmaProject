@@ -245,6 +245,9 @@ MonoBehaviour:
   - {fileID: 68462208}
   whatToSend:
   - turnOn
+  stuffToDoSpell: []
+  whatToSendSpell: []
+  NeededSpell: 0
 --- !u!212 &68462212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1946,6 +1949,9 @@ MonoBehaviour:
   - {fileID: 869996668}
   whatToSend:
   - turnOn
+  stuffToDoSpell: []
+  whatToSendSpell: []
+  NeededSpell: 0
 --- !u!212 &869996672
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2217,6 +2223,7 @@ MonoBehaviour:
   fireSymbol: {fileID: 21300000, guid: d30afc8f19cfbd44fb602344b38c5ecd, type: 3}
   waterSymbol: {fileID: 21300000, guid: 7b3cc86642cacaf45839c6fc2d50cab6, type: 3}
   mossSymbol: {fileID: 21300000, guid: fdd29deb70df17d4291028c00ff75308, type: 3}
+  player: {fileID: 0}
 --- !u!4 &992413843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
@@ -3491,6 +3498,11 @@ MonoBehaviour:
   - {fileID: 1355692158}
   whatToSend:
   - turnOn
+  stuffToDoSpell:
+  - {fileID: 1355692158}
+  whatToSendSpell:
+  - turnOn
+  NeededSpell: 0
 --- !u!212 &1355692162
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -62,7 +62,8 @@ public class PuzzleSpellcasting : MonoBehaviour
 	public Sprite fireSymbol;
 	public Sprite waterSymbol;
 	public Sprite mossSymbol;
-	
+
+	public GameObject player;
 	
 	 private void Awake () {
 
@@ -140,11 +141,15 @@ public class PuzzleSpellcasting : MonoBehaviour
 		symbol.color = symbolAlpha;
 		symbol.sprite = null;
 		canDraw = false;
-
+		
 	 }
 
 	 private void Update ()
 	{
+		if(player == null)
+        {
+			player = GameObject.FindGameObjectWithTag("Player");
+		}
 
 		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
