@@ -83,11 +83,19 @@ public class PuzzleSpellcasting : MonoBehaviour
 		TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
 		foreach (TextAsset gestureXml in gesturesXml)
 			trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
+		
+		
+		TextAsset[] customGesturesXml = Resources.LoadAll<TextAsset>("GestureSet/Custom-Gestures/");
+		foreach (TextAsset gestureXml in customGesturesXml)
+			trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
+			
 
 		//Load user custom gestures
+		/*
 		string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.xml");
 		foreach (string filePath in filePaths)
 			trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
+			*/
 
 		/*
 		symbols = new[]
