@@ -254,7 +254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &15748026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,8 +895,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69294007}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -5.4038, y: -21.5907, z: 0}
-  m_LocalScale: {x: 1.2308, y: 2.1542265, z: 1}
+  m_LocalPosition: {x: -4.9, y: -21.5907, z: 0}
+  m_LocalScale: {x: 1.2308, y: 1.8183731, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
@@ -2560,11 +2560,11 @@ MonoBehaviour:
   dialogue:
     name: ???
     sentences:
-    - 'So you''re here, huh? Means something bad happened in the Library, eh? '
-    - Here's what you need to do, kid.
-    - Select one of these books with your mouse to explore a section of the library.
-    - Collect and use its data to protect it by fighting monsters and solving puzzles!
-    - Shouldn't be too hard right?
+    - 'Oh you''re back! '
+    - You've done well, however... you're journey ends here for now.
+    - The rest of the databases will be open in the final version.
+    - 'Though you can play again if you wish. '
+    - Thank you very much for playing!
 --- !u!1 &179765726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,8 +4755,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370830444}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 6.6452, y: -21.5907, z: 0}
-  m_LocalScale: {x: 1.2308, y: 2.49008, z: 1}
+  m_LocalPosition: {x: 5.6376, y: -21.5907, z: 0}
+  m_LocalScale: {x: 1.2308, y: 1.8183731, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 21
@@ -5293,7 +5293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5623620802165446217, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.392
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 5623620802165446218, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_Color.a
@@ -5410,7 +5410,7 @@ PrefabInstance:
     - target: {fileID: 5623620802825178613, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: tutorial1
       value: 
-      objectReference: {fileID: 1953429451}
+      objectReference: {fileID: 1005309108}
     - target: {fileID: 5623620802825178614, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5579,14 +5579,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPart
       objectReference: {fileID: 0}
-    - target: {fileID: 5623620803819633813, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.9177883
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623620803819633813, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.1871
-      objectReference: {fileID: 0}
     - target: {fileID: 5623620803819633815, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_Name
       value: OptionsTrigger
@@ -5641,7 +5633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5623620803998114381, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.49837324
+      value: 0.47645625
       objectReference: {fileID: 0}
     - target: {fileID: 5623620803998114381, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_LocalScale.y
@@ -5649,7 +5641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5623620803998114381, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0316
+      value: 0.4259
       objectReference: {fileID: 0}
     - target: {fileID: 5623620803998114381, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7474,7 +7466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &704571988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8608,7 +8600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: USE WASD TO MOVE
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16203,7 +16195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609357, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609360, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_RootOrder
@@ -16215,7 +16207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609360, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.3
+      value: -12.85
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609360, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17568,7 +17560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: USE F TO INTERACT
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
