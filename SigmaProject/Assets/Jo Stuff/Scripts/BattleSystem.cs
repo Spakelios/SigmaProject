@@ -53,6 +53,8 @@ public class BattleSystem : MonoBehaviour
     public AudioSource battleMusic;
     public AudioSource victoryJingle;
     public AudioSource defeatJingle;
+
+    public GameObject advanceDialogueText;
     
     //private SymbolDrawing symbolDrawing;
     private void Start()
@@ -131,12 +133,14 @@ public class BattleSystem : MonoBehaviour
     private IEnumerator PlayerTurn()
     {
         battleText.text = playerStats.playerName + "! It's your turn!";
+        advanceDialogueText.SetActive(true);
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
 
         battleText.text = "";
         spellbook.SetTrigger("SlideUp");
+        advanceDialogueText.SetActive(false);
         buttons.AllInteractable();
     }
 
@@ -154,6 +158,7 @@ public class BattleSystem : MonoBehaviour
         mouseClick = false;
 
         battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
+        advanceDialogueText.SetActive(true);
         
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
