@@ -7,6 +7,7 @@ public class ActivateCondition : MonoBehaviour
     public GameObject ActivateTrigger;
     Collider2D col;
     SpriteRenderer spr;
+    public GameObject pedestal;
     private void Start()
     {
         col = gameObject.GetComponent<CircleCollider2D>();
@@ -18,6 +19,7 @@ public class ActivateCondition : MonoBehaviour
     {
         if (ActivateTrigger.activeInHierarchy == false)
         {
+            pedestal.GetComponent<Animator>().SetBool("isopen", true);
             spr.enabled = true;
             col.enabled = true;   
         }
