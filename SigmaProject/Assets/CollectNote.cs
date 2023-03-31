@@ -4,16 +4,35 @@ using UnityEngine;
 
 public class CollectNote : MonoBehaviour
 {
-    public GameObject UIref;
+    //public GameObject UIref;
+
+    public static bool note1 = false;
+    public static bool note2 = false;
+    public static bool note3 = false;
     
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
+            //UIref.SetActive(true);
+
+            if (gameObject.name == "Note 1")
+            {
+                note1 = true;
+            }
             
-            UIref.SetActive(true);
-            Destroy(gameObject);
+            else if (gameObject.name == "Note 2")
+            {
+                note2 = true;
+            }
+
+            else
+            {
+                note3 = true;
+            }
+            
+            gameObject.SetActive(false);
         }
     }
 }

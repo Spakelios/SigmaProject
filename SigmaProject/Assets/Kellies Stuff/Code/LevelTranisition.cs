@@ -24,6 +24,15 @@ public class LevelTranisition : MonoBehaviour
     {
         anim.SetTrigger("StartTrigger");
         CineMachineShake.Instance.ScreenShake(1.5f, 0.4f);
+        
+        PlayerSpawn.firstSpawn = true;
+        EnemyCheck.fireEnemyDead = false;
+        EnemyCheck.waterEnemyDead = false;
+        EnemyCheck.mossEnemyDead = false;
+        CollectNote.note1 = false;
+        CollectNote.note2 = false;
+        CollectNote.note3 = false;
+
 
         yield return new WaitForSeconds(TranistionTime);
         

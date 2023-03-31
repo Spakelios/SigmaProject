@@ -2659,7 +2659,7 @@ GameObject:
   - component: {fileID: 729831406}
   - component: {fileID: 729831405}
   m_Layer: 2
-  m_Name: CollectNote (1)
+  m_Name: Note 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2776,7 +2776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b24e8093dd16c14ebf2bd5e2b0d7d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIref: {fileID: 617431276}
 --- !u!58 &729831410
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5377,6 +5376,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276728289}
   m_CullTransparentMesh: 1
+--- !u!1 &1290221571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290221573}
+  - component: {fileID: 1290221572}
+  m_Layer: 0
+  m_Name: ActivateNote
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1290221572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290221571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69138d25bc2652d42bc286a57cbfda8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIref1: {fileID: 493501052}
+  UIref2: {fileID: 617431276}
+  UIref3: {fileID: 2045334921}
+--- !u!4 &1290221573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290221571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.540001, y: 7.83, z: 103.10489}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298186476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6872,7 +6917,7 @@ GameObject:
   - component: {fileID: 1528863103}
   - component: {fileID: 1528863104}
   m_Layer: 2
-  m_Name: CollectNote
+  m_Name: Note 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6919,7 +6964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b24e8093dd16c14ebf2bd5e2b0d7d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIref: {fileID: 493501052}
 --- !u!58 &1528863101
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8215,7 +8259,7 @@ GameObject:
   - component: {fileID: 1758512613}
   - component: {fileID: 1758512612}
   m_Layer: 2
-  m_Name: CollectNote (2)
+  m_Name: Note 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8332,7 +8376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b24e8093dd16c14ebf2bd5e2b0d7d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIref: {fileID: 2045334921}
 --- !u!58 &1758512617
 CircleCollider2D:
   m_ObjectHideFlags: 0
