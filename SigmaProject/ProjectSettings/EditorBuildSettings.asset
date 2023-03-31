@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Kellies Stuff/Scenes/HubWorld2.unity
     guid: de0994057205a984ca784187097a2069
   - enabled: 1
     path: Assets/Gabs Stuff/gabScene.unity
     guid: 4ccd8f380ba0265459e8d46b544c1eab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Jo Stuff/Scenes/Symbol Drawing Test.unity
     guid: 59f8c8fe24b54b1409c313574bfd84fb
   - enabled: 1
     path: Assets/Jo Stuff/Scenes/Battle Arena.unity
     guid: 894a70efd9844a44baca4bb8208ddb75
-  - enabled: 1
+  - enabled: 0
     path: Assets/Stock Levels/UNDERCONTRUCTION!.unity
     guid: 55a62154dd3ec184d832a17cfe796cf6
   m_configObjects: {}
