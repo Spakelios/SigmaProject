@@ -2560,8 +2560,8 @@ MonoBehaviour:
   dialogue:
     name: ???
     sentences:
-    - 'So you''re here huh? Means something bad happened in the Library eh? '
-    - Heres what you need to do kid.
+    - 'So you''re here, huh? Means something bad happened in the Library, eh? '
+    - Here's what you need to do, kid.
     - Select one of these books with your mouse to explore a section of the library.
     - Collect and use its data to protect it by fighting monsters and solving puzzles!
     - Shouldn't be too hard right?

@@ -82,10 +82,14 @@ public class SymbolDrawing : MonoBehaviour
 	public Transform drawAreaPos1;
 	public Transform drawAreaPos2;
 
+	public static bool isTutorial = false;
+
 
 
 	private void Start()
 	{
+		if (isTutorial) return;
+		
 		if (!BattleSystem.firstBattleDone)
 		{
 			gameObject.transform.position = drawAreaPos1.position;

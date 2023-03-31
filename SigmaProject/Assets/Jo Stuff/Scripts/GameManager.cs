@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public SymbolDrawing symbolDrawing;
     public BattleSystem battleSystem;
+    public TutorialBattleSystem tutorialBattle;
     public EnemyStats enemyStats;
 
     private int okDamage;
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         symbolDrawing = FindObjectOfType<SymbolDrawing>();
         battleSystem = FindObjectOfType<BattleSystem>();
+        tutorialBattle = FindObjectOfType<TutorialBattleSystem>();
 
         strongElement = 1.5f;
         neutralElement = 1;
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
             "Fire Book" => "Fire",
             "Water Book" => "Water",
             "Moss Book" => "Moss",
+            "???" => "None",
             _ => enemyType
         };
 
@@ -80,6 +83,10 @@ public class GameManager : MonoBehaviour
             "Moss" when spell == "Fireball" => strongElement,
             "Moss" when spell == "Waterfall" => weakElement,
             "Moss" when spell == "Mossy Overgrowth" => neutralElement,
+            //goblin tutorial
+            "None" when spell == "Fireball" => neutralElement,
+            "None" when spell == "Waterfall" => neutralElement,
+            "None" when spell == "Mossy Overgrowth" => neutralElement,
             _ => multiplier
         };
         
@@ -172,7 +179,17 @@ public class GameManager : MonoBehaviour
         {
             damageEffectiveness = null;
         }
-        battleSystem.ContinuePlayerTurn();
+
+        if (!SymbolDrawing.isTutorial)
+        {
+            battleSystem.ContinuePlayerTurn();
+        }
+
+        else
+        {
+            tutorialBattle.ContinuePlayerTurn();
+        }
+        
         symbolDrawing.BookDown();
     }
 }

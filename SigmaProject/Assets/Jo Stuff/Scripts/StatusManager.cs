@@ -22,8 +22,7 @@ public class StatusManager : MonoBehaviour
             SetBattleData(other);
             LevelLoader.instance.LoadLevel("Battle Arena");
         }
-
-
+        
     }
 
     private void SetBattleData(Collider2D other)

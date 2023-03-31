@@ -206,7 +206,7 @@ public class BattleSystem : MonoBehaviour
             attackNumber = Random.Range(0, 3);
 
             battleText.text = enemyStats.enemyName + " " + enemyAttacks[attackNumber];
-            enemyDamage = Random.Range(20, 30);
+            enemyDamage = Random.Range(20, 31);
         }
 
         else //30% chance to miss

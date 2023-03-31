@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject Canvas;
     
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
     // Use this for initialization
     void Start()
@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         Canvas.SetActive(false);
     }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f6de674659983042a0ecc421986d0b1, type: 3}
-  m_Name: CurrentEnemy
+  m_Name: GoblinMentor
   m_EditorClassIdentifier: 
   enemyName: ???
   enemyGameObject: {fileID: 6327466045040252248, guid: 7dd0be1e7b5d26b4fb815aa240115c6f, type: 3}
   maxHealth: 999
-  health: 915
+  health: 999
   attack1: a
   attack2: aa
   attack3: aaa
