@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Stock Levels/UNDERCONTRUCTION!.unity
     guid: 55a62154dd3ec184d832a17cfe796cf6
+  - enabled: 1
+    path: Assets/Kellies Stuff/Scenes/NoTutorialHubworld.unity
+    guid: 73a43d580808dfd45915a77518b28145
   m_configObjects: {}
