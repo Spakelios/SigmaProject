@@ -68,9 +68,16 @@ public class SymbolDrawing : MonoBehaviour
 	public Image symbol;
 	private Color symbolAlpha;
 
+	public Image stencil;
+	private Color stencilAlpha;
+
 	public Sprite fireSymbol;
 	public Sprite waterSymbol;
 	public Sprite mossSymbol;
+
+	public Sprite fireStencil;
+	public Sprite waterStencil;
+	public Sprite mossStencil;
 
 	public Transform drawAreaPos1;
 	public Transform drawAreaPos2;
@@ -160,23 +167,29 @@ public class SymbolDrawing : MonoBehaviour
 
 		fireSymbols = new[]
 		{
-			"F"
+			"Fire"
 		};
 
 		waterSymbols = new[]
 		{
-			"W"
+			"Water"
 		};
 
 		mossSymbols = new[]
 		{
-			"M"
+			"Moss"
 		};
 		
 		symbolAlpha = Color.white;
 		symbolAlpha.a = 0f;
 		symbol.color = symbolAlpha;
 		symbol.sprite = null;
+		
+		stencilAlpha = Color.white;
+		stencilAlpha.a = 0f;
+		stencil.color = stencilAlpha;
+		stencil.sprite = null;
+		
 		canDraw = false;
 
 	 }
@@ -357,9 +370,14 @@ public class SymbolDrawing : MonoBehaviour
 		mossMagic = false;
 		
 		symbols = fireSymbols;
+		
 		symbolAlpha.a = 1f;
 		symbol.color = symbolAlpha;
 		symbol.sprite = fireSymbol;
+		
+		stencilAlpha.a = 1f;
+		stencil.color = stencilAlpha;
+		stencil.sprite = fireStencil;
 		
 	}
 
@@ -372,9 +390,14 @@ public class SymbolDrawing : MonoBehaviour
 		mossMagic = false;
 		
 		symbols = waterSymbols;
+		
 		symbolAlpha.a = 1f;
 		symbol.color = symbolAlpha;
 		symbol.sprite = waterSymbol;
+		
+		stencilAlpha.a = 1f;
+		stencil.color = stencilAlpha;
+		stencil.sprite = waterStencil;
 
 	}
 
@@ -394,9 +417,14 @@ public class SymbolDrawing : MonoBehaviour
 		mossMagic = true;
 
 		symbols = mossSymbols;
+		
 		symbolAlpha.a = 1f;
 		symbol.color = symbolAlpha;
 		symbol.sprite = mossSymbol;
+		
+		stencilAlpha.a = 1f;
+		stencil.color = stencilAlpha;
+		stencil.sprite = mossStencil;
 	}
 
 	public void BookDown()
@@ -407,9 +435,14 @@ public class SymbolDrawing : MonoBehaviour
 		mossMagic = false;
 
 		symbols = null;
+		
 		symbolAlpha.a = 0f;
 		symbol.color = symbolAlpha;
 		symbol.sprite = null;
+		
+		stencilAlpha.a = 0f;
+		stencil.color = stencilAlpha;
+		stencil.sprite = null;
 	}
 
 	public void UndoPreviousLine()
