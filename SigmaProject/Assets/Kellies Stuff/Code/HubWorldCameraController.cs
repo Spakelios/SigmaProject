@@ -13,6 +13,9 @@ public class HubWorldCameraController : MonoBehaviour
     public GameObject tutorial1;
     
     public GameObject bookStack;
+
+    public AudioSource menuMusic;
+    public AudioSource hubMusic;
     
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,6 +27,8 @@ public class HubWorldCameraController : MonoBehaviour
             
             canvas1.SetActive(false);
             // canvas2.SetActive(false);
+            
+            menuMusic.Stop();
             StartCoroutine(LightsOn());
         }
     }
@@ -43,6 +48,11 @@ public class HubWorldCameraController : MonoBehaviour
         player.SetActive(true);
         tutorial1.SetActive(true); 
         walk.speed = 20;
+
+        if (!hubMusic.isPlaying)
+        {
+            hubMusic.Play();
+        }
         // dark.color = new Color(1f, 1f, 1f, .02f);
 
     }

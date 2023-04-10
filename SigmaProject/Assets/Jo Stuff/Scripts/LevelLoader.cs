@@ -9,6 +9,9 @@ public class LevelLoader : MonoBehaviour
 
     public Animator transition;
     public float transitionTime = 1f;
+    
+    public AudioSource gameMusic;
+    public AudioSource encounterSound;
 
     private void Awake()
     {
@@ -23,6 +26,8 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadNamedLevel(string levelName)
     {
+        gameMusic.Stop();
+        encounterSound.Play();
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
