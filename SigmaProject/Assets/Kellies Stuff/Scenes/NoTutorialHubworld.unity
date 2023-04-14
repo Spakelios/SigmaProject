@@ -777,6 +777,55 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1105346345592356040, guid: 4d8b9fbcf12c47d4790b7792885b3270, type: 3}
   m_PrefabInstance: {fileID: 58999832}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &68660227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 68660228}
+  - component: {fileID: 68660229}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &68660228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68660227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 769259084}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &68660229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68660227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cam1: {fileID: 104131801}
+  Cam2: {fileID: 2146100}
+  BookUI: {fileID: 723630495}
+  walk: {fileID: 2050340863}
+  StoneAnim: {fileID: 471479100}
+  Bridge: {fileID: 471479103}
 --- !u!1 &69294007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1262,6 @@ GameObject:
   - component: {fileID: 70095023}
   - component: {fileID: 70095024}
   - component: {fileID: 70095025}
-  - component: {fileID: 70095026}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -1388,7 +1436,7 @@ MonoBehaviour:
           m_StringArgument: PurpleBookChosen
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 70095026}
+      - m_Target: {fileID: 1094628602}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: ChooseABook
         m_Mode: 1
@@ -1481,24 +1529,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &70095026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70095019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cam1: {fileID: 104131801}
-  Cam2: {fileID: 2146100}
-  BookUI: {fileID: 723630495}
-  walk: {fileID: 3200041}
-  StoneAnim: {fileID: 471479100}
-  Bridge: {fileID: 471479103}
 --- !u!1001 &72736101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3161,7 +3191,6 @@ GameObject:
   - component: {fileID: 244488605}
   - component: {fileID: 244488606}
   - component: {fileID: 244488607}
-  - component: {fileID: 244488608}
   m_Layer: 5
   m_Name: Image (3)
   m_TagString: Untagged
@@ -3336,6 +3365,18 @@ MonoBehaviour:
           m_StringArgument: OrangeBookChosen
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 68660229}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: ChooseABook
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &244488607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3417,24 +3458,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &244488608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244488601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cam1: {fileID: 104131801}
-  Cam2: {fileID: 2146100}
-  BookUI: {fileID: 723630495}
-  walk: {fileID: 2050340863}
-  StoneAnim: {fileID: 471479100}
-  Bridge: {fileID: 471479103}
 --- !u!1 &247931756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,6 +3776,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &284328596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284328597}
+  - component: {fileID: 284328598}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &284328597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284328596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 769259084}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284328598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284328596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cam1: {fileID: 104131801}
+  Cam2: {fileID: 2146100}
+  BookUI: {fileID: 723630495}
+  walk: {fileID: 3200041}
+  StoneAnim: {fileID: 471479100}
+  Bridge: {fileID: 471479103}
 --- !u!1 &294862942
 GameObject:
   m_ObjectHideFlags: 0
@@ -6487,6 +6559,104 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &513882309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 513882310}
+  - component: {fileID: 513882311}
+  m_Layer: 0
+  m_Name: GameObject (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &513882310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513882309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 769259084}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &513882311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513882309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cam1: {fileID: 104131801}
+  Cam2: {fileID: 2146100}
+  BookUI: {fileID: 723630495}
+  walk: {fileID: 1725535024}
+  StoneAnim: {fileID: 471479100}
+  Bridge: {fileID: 471479103}
+--- !u!1 &527875691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 527875692}
+  - component: {fileID: 527875693}
+  m_Layer: 0
+  m_Name: GameObject (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &527875692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527875691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 769259084}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527875693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527875691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cam1: {fileID: 104131801}
+  Cam2: {fileID: 2146100}
+  BookUI: {fileID: 723630495}
+  walk: {fileID: 1725535024}
+  StoneAnim: {fileID: 471479100}
+  Bridge: {fileID: 471479103}
 --- !u!1 &537982636
 GameObject:
   m_ObjectHideFlags: 0
@@ -7747,6 +7917,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &685833608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 685833609}
+  - component: {fileID: 685833610}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &685833609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685833608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 769259084}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &685833610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685833608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cam1: {fileID: 104131801}
+  Cam2: {fileID: 2146100}
+  BookUI: {fileID: 723630495}
+  walk: {fileID: 1725535024}
+  StoneAnim: {fileID: 471479100}
+  Bridge: {fileID: 471479103}
 --- !u!1 &704571987
 GameObject:
   m_ObjectHideFlags: 0
@@ -8453,6 +8672,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 502341608}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &769259083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769259084}
+  m_Layer: 0
+  m_Name: ButtonControllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &769259084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769259083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.48879, y: -11.667999, z: -1.4619141}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1094628601}
+  - {fileID: 284328597}
+  - {fileID: 68660228}
+  - {fileID: 685833609}
+  - {fileID: 527875692}
+  - {fileID: 513882310}
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &775236307 stripped
 GameObject:
@@ -10052,7 +10307,6 @@ GameObject:
   - component: {fileID: 913569927}
   - component: {fileID: 913569928}
   - component: {fileID: 913569929}
-  - component: {fileID: 913569930}
   m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
@@ -10227,7 +10481,7 @@ MonoBehaviour:
           m_StringArgument: GreenBookChosen
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 913569930}
+      - m_Target: {fileID: 284328598}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: ChooseABook
         m_Mode: 1
@@ -10320,24 +10574,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &913569930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913569923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cam1: {fileID: 104131801}
-  Cam2: {fileID: 2146100}
-  BookUI: {fileID: 723630495}
-  walk: {fileID: 3200041}
-  StoneAnim: {fileID: 471479100}
-  Bridge: {fileID: 471479103}
 --- !u!1 &924748118
 GameObject:
   m_ObjectHideFlags: 0
@@ -11894,6 +12130,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086402928}
   m_CullTransparentMesh: 1
+--- !u!1 &1094628600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094628601}
+  - component: {fileID: 1094628602}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1094628601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094628600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 769259084}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1094628602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094628600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cam1: {fileID: 104131801}
+  Cam2: {fileID: 2146100}
+  BookUI: {fileID: 723630495}
+  walk: {fileID: 3200041}
+  StoneAnim: {fileID: 471479100}
+  Bridge: {fileID: 471479103}
 --- !u!1 &1110351805
 GameObject:
   m_ObjectHideFlags: 0
@@ -12145,7 +12430,6 @@ GameObject:
   - component: {fileID: 1124822734}
   - component: {fileID: 1124822735}
   - component: {fileID: 1124822736}
-  - component: {fileID: 1124822737}
   m_Layer: 5
   m_Name: Image (5)
   m_TagString: Untagged
@@ -12320,7 +12604,7 @@ MonoBehaviour:
           m_StringArgument: pinkbookChosen
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1124822737}
+      - m_Target: {fileID: 527875693}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: ChooseABook
         m_Mode: 1
@@ -12413,24 +12697,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1124822737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124822730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cam1: {fileID: 104131801}
-  Cam2: {fileID: 2146100}
-  BookUI: {fileID: 723630495}
-  walk: {fileID: 1725535024}
-  StoneAnim: {fileID: 471479100}
-  Bridge: {fileID: 471479103}
 --- !u!1 &1143835126
 GameObject:
   m_ObjectHideFlags: 0
@@ -14242,6 +14508,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1435552342}
         m_TargetAssemblyTypeName: BookManager, Assembly-CSharp
         m_MethodName: book5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1435552341}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: YellowBookChosen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 513882311}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: ChooseABook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16976,7 +17266,6 @@ GameObject:
   - component: {fileID: 1662984551}
   - component: {fileID: 1662984552}
   - component: {fileID: 1662984553}
-  - component: {fileID: 1662984554}
   m_Layer: 5
   m_Name: Image (4)
   m_TagString: Untagged
@@ -17139,7 +17428,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1662984554}
+      - m_Target: {fileID: 685833610}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: ChooseABook
         m_Mode: 1
@@ -17244,24 +17533,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1662984554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662984547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd369e246b910e4ba0eb9f2f3e16930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cam1: {fileID: 104131801}
-  Cam2: {fileID: 2146100}
-  BookUI: {fileID: 723630495}
-  walk: {fileID: 1725535024}
-  StoneAnim: {fileID: 471479100}
-  Bridge: {fileID: 471479103}
 --- !u!1 &1671675116
 GameObject:
   m_ObjectHideFlags: 0

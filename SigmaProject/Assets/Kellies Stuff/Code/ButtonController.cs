@@ -25,13 +25,11 @@ public class ButtonController : MonoBehaviour
     {
         walk.speed = 0;
         
-        // anim.Play("NoBooks");
 
         yield return new WaitForSeconds(10f);
         
         Cam2.SetActive(true);
         Cam1.SetActive(true);
-        // BookPopUp.SetActive(true);
         BookUI.SetActive(true);
         CineMachineShake.Instance.ScreenShake(1.5f, 0.4f);
         StoneAnim.Play("MovingPath");
@@ -43,6 +41,5 @@ public class ButtonController : MonoBehaviour
         walk.speed = 20;
         Bridge.volume = 0;
         
-        yield break;
     }
 }
