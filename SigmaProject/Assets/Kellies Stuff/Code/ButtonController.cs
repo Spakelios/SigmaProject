@@ -10,9 +10,9 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject Cam1, Cam2, BookPopUp, BookUI;
+    public GameObject Cam1, Cam2, BookUI;
     public walk walk;
-    public Animator anim, StoneAnim;
+    public Animator StoneAnim;
     public AudioSource Bridge;
     
     
@@ -25,22 +25,24 @@ public class ButtonController : MonoBehaviour
     {
         walk.speed = 0;
         
-        anim.Play("NoBooks");
+        // anim.Play("NoBooks");
 
         yield return new WaitForSeconds(10f);
         
         Cam2.SetActive(true);
         Cam1.SetActive(true);
-        BookPopUp.SetActive(true);
+        // BookPopUp.SetActive(true);
         BookUI.SetActive(true);
         CineMachineShake.Instance.ScreenShake(1.5f, 0.4f);
         StoneAnim.Play("MovingPath");
         Bridge.volume = 1;
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(9f);
 
         CineMachineShake.Instance.ScreenShake(0,0);
         walk.speed = 20;
         Bridge.volume = 0;
+        
+        yield break;
     }
 }
