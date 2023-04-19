@@ -6549,6 +6549,17 @@ Transform:
   m_Father: {fileID: 502341608}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1066287262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9182028576339167120, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+  m_PrefabInstance: {fileID: 9182028575090298310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d751722824d7caf479b0813149402b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1094628602 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2087353476579925657, guid: 2dccdcc1751377d40a4566fc2351c7e6, type: 3}
@@ -8964,6 +8975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f565cc2ea69196459de48490548483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xMOV: 0
+  yMOV: 0
   speed: 0
   CurrentLayer: {fileID: 0}
   canMove: 0
@@ -10451,6 +10464,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9182028575020408182, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: book2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028575020408182, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
@@ -10563,6 +10580,14 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1567969026}
@@ -10574,6 +10599,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1692722189}
+    - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1066287262}
+    - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: book1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: BookManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576294404138, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9182028576339167122, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_RootOrder
       value: 0
