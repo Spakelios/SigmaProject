@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class walk : MonoBehaviour
 {
-    float xMOV;
-    float yMOV; 
-    public float speed;
+    public float xMOV;
+    public float yMOV; 
+    public float speed = 4;
     Rigidbody2D rb;
     private Animator animator;
     public GameObject CurrentLayer;
@@ -19,7 +19,7 @@ public class walk : MonoBehaviour
         canMove = true;
         animator = gameObject.GetComponent<Animator>();
         animator.applyRootMotion = true;
-
+        speed = 4;
     }
 
     // Update is called once per frame
@@ -27,15 +27,15 @@ public class walk : MonoBehaviour
     {
         if (!canMove) return;
         
-        xMOV = Input.GetAxis("Horizontal") * speed * 0.1f;
-        yMOV = Input.GetAxis("Vertical") * speed * 0.1f;
+        xMOV = Input.GetAxis("Horizontal") ;
+        yMOV = Input.GetAxis("Vertical") ;
         /* if (xMOV != 0)
               gameObject.transform.position = new Vector3(gameObject.transform.position.x + xMOV, gameObject.transform.position.y, gameObject.transform.position.z);
           if (yMOV != 0)
               gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + yMOV, gameObject.transform.position.z);
      */
         if (xMOV != 0 || yMOV != 0)
-            rb.velocity = new Vector2(xMOV, yMOV);
+            rb.velocity = new Vector2(xMOV*speed, yMOV*speed);
         else
             rb.velocity = new Vector2(0, 0);
         
