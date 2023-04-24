@@ -53,6 +53,7 @@ public class BattleSystem : MonoBehaviour
     public AudioSource battleMusic;
     public AudioSource victoryJingle;
     public AudioSource defeatJingle;
+    public AudioSource spellSound;
 
     public GameObject advanceDialogueText;
     
@@ -156,6 +157,11 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         mouseClick = false;
+        
+        if (spellSound.clip != null)
+        {
+            spellSound.Play();
+        }
 
         battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
         advanceDialogueText.SetActive(true);
