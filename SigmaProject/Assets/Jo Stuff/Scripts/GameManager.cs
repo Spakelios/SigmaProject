@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     private int neutralElement;
 
     public float multiplier;
+
+    public AudioClip fireSound;
+    public AudioClip waterSound;
+    public AudioClip mossSound;
     
 
 
@@ -182,11 +186,26 @@ public class GameManager : MonoBehaviour
 
         if (!SymbolDrawing.isTutorial)
         {
+            battleSystem.spellSound.clip = spell switch
+            {
+                "Fireball" => fireSound,
+                "Waterfall" => waterSound,
+                "Mossy Overgrowth" => mossSound,
+                _ => null
+            };
             battleSystem.ContinuePlayerTurn();
         }
 
         else
         {
+            tutorialBattle.spellSound.clip = spell switch
+            {
+                "Fireball" => fireSound,
+                "Waterfall" => waterSound,
+                "Mossy Overgrowth" => mossSound,
+                _ => null
+            };
+            
             tutorialBattle.ContinuePlayerTurn();
         }
         

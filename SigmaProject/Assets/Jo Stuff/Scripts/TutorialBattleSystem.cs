@@ -45,6 +45,8 @@ public class TutorialBattleSystem : MonoBehaviour
 
     public static bool tutorialDone;
 
+    public AudioSource spellSound;
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -146,6 +148,11 @@ public class TutorialBattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         mouseClick = false;
+        
+        if (spellSound.clip != null)
+        {
+            spellSound.Play();
+        }
 
         battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
         advanceDialogueText.SetActive(true);
