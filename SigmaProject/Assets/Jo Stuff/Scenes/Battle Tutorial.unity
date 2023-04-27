@@ -2543,12 +2543,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 577858170, guid: 830ccc120879d224197533204d6fc73a, type: 3}
       propertyPath: m_fontSize
-      value: 22
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 577858170, guid: 830ccc120879d224197533204d6fc73a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 92c09ec03eb68b747bd4974f78f326fb, type: 2}
+    - target: {fileID: 577858170, guid: 830ccc120879d224197533204d6fc73a, type: 3}
       propertyPath: m_fontSizeBase
-      value: 22
+      value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 577858170, guid: 830ccc120879d224197533204d6fc73a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5667552314954923550, guid: 92c09ec03eb68b747bd4974f78f326fb, type: 2}
     - target: {fileID: 577858170, guid: 830ccc120879d224197533204d6fc73a, type: 3}
       propertyPath: m_characterSpacing
       value: 10
