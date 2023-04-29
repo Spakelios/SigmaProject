@@ -11,7 +11,7 @@ public enum TutorialBattleState {Start, PlayerTurn, EnemyTurn, End}
 public class TutorialBattleSystem : MonoBehaviour
 {
     private GameObject player;
-    private GameObject enemy;
+    public GameObject enemy;
 
     public walk walk;
 
@@ -46,6 +46,8 @@ public class TutorialBattleSystem : MonoBehaviour
     public static bool tutorialDone;
 
     public AudioSource spellSound;
+    
+    private GameObject spell;
 
     void Start()
     {
@@ -154,12 +156,19 @@ public class TutorialBattleSystem : MonoBehaviour
             spellSound.Play();
         }
 
+        if (gameManager.currentSpell != null)
+        {
+            spell = Instantiate(gameManager.currentSpell, enemy.transform.position, Quaternion.identity);
+        }
         battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
         advanceDialogueText.SetActive(true);
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
-
+        if (spell != null)
+        {
+            Destroy(spell);
+        }
         battleText.text = gameManager.damageRank + gameManager.damageEffectiveness + " You dealt " +
                           gameManager.damage + " damage to " + enemyStats.enemyName + "!";
 

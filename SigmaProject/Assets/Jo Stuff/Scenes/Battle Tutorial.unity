@@ -289,8 +289,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4096974724426748227, guid: f28342dc19f6afa4d8c51b1d5d47fe69, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 19c1816649fbca54c8228ee73b522c5e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28342dc19f6afa4d8c51b1d5d47fe69, type: 3}
+--- !u!1 &245769913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4096974724426748224, guid: f28342dc19f6afa4d8c51b1d5d47fe69, type: 3}
+  m_PrefabInstance: {fileID: 245769912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &510532353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2329,6 +2338,10 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 2bb01bddefe6efe4b9b5acab939466e0, type: 3}
   waterSound: {fileID: 8300000, guid: 2a49bb2d6e998ac40b8a60bc9450967f, type: 3}
   mossSound: {fileID: 8300000, guid: 8cb7f53e854a32e42a8c90e4f8b3d6d3, type: 3}
+  fire: {fileID: 8841526554502506067, guid: b09f78d35e3168b429e78535354ace59, type: 3}
+  water: {fileID: 3303473499925326152, guid: 3451a352959e934449d3f97b82e4d723, type: 3}
+  moss: {fileID: 5677277510923056022, guid: 4ca31838a743e6b4ab7937cad1493fe8, type: 3}
+  currentSpell: {fileID: 0}
 --- !u!1 &2001255104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +2371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c017940887a7094f92cfbcdf6540c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 245769913}
   walk: {fileID: 0}
   playerPos1: {fileID: 914517241}
   enemyPos1: {fileID: 923242994}

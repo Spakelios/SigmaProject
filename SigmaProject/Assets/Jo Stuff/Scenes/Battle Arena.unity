@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609360, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609360, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -482,7 +482,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &577858170 stripped
 MonoBehaviour:
@@ -1100,12 +1100,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789960336}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.3871, y: 1.5775, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 75.92671, y: -144.11017, z: -6746.38}
+  m_LocalScale: {x: 74.95978, y: 74.95978, z: 74.95978}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 2035422045}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &869388466
 GameObject:
@@ -1856,7 +1856,7 @@ Transform:
   - {fileID: 665054898}
   - {fileID: 685376037}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483687566
 GameObject:
@@ -1987,7 +1987,7 @@ PrefabInstance:
       objectReference: {fileID: 1911491506817484662, guid: cdd55bc29b0b8964f96ab4b77a7f1979, type: 3}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_LocalScale.x
@@ -2394,12 +2394,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805470928}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.09, y: -2.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1985.6844, y: -416.77637, z: -6746.38}
+  m_LocalScale: {x: 74.95978, y: 74.95978, z: 74.95978}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 2035422045}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1985109146
 GameObject:
@@ -2430,7 +2430,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1985109148
 MonoBehaviour:
@@ -2456,6 +2456,15 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 2bb01bddefe6efe4b9b5acab939466e0, type: 3}
   waterSound: {fileID: 8300000, guid: 2a49bb2d6e998ac40b8a60bc9450967f, type: 3}
   mossSound: {fileID: 8300000, guid: 8cb7f53e854a32e42a8c90e4f8b3d6d3, type: 3}
+  fire: {fileID: 8841526554502506067, guid: b09f78d35e3168b429e78535354ace59, type: 3}
+  water: {fileID: 3303473499925326152, guid: 3451a352959e934449d3f97b82e4d723, type: 3}
+  moss: {fileID: 5677277510923056022, guid: 4ca31838a743e6b4ab7937cad1493fe8, type: 3}
+  currentSpell: {fileID: 0}
+--- !u!224 &2035422045 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5465992388556121456, guid: 830ccc120879d224197533204d6fc73a, type: 3}
+  m_PrefabInstance: {fileID: 2062498476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2062498476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2549,7 +2558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5465992388556121456, guid: 830ccc120879d224197533204d6fc73a, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5465992388556121456, guid: 830ccc120879d224197533204d6fc73a, type: 3}
       propertyPath: m_AnchorMax.x

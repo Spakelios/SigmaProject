@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour
     public AudioClip fireSound;
     public AudioClip waterSound;
     public AudioClip mossSound;
+
+    public GameObject fire;
+    public GameObject water;
+    public GameObject moss;
+
+    public GameObject currentSpell;
     
 
 
@@ -183,6 +189,14 @@ public class GameManager : MonoBehaviour
         {
             damageEffectiveness = null;
         }
+
+        currentSpell = spell switch
+        {
+            "Fireball" => fire,
+            "Waterfall" => water,
+            "Mossy Overgrowth" => moss,
+            _ => null
+        };
 
         if (!SymbolDrawing.isTutorial)
         {

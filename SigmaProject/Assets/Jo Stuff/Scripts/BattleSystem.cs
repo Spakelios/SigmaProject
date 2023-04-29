@@ -56,6 +56,8 @@ public class BattleSystem : MonoBehaviour
     public AudioSource spellSound;
 
     public GameObject advanceDialogueText;
+
+    private GameObject spell;
     
     //private SymbolDrawing symbolDrawing;
     private void Start()
@@ -163,11 +165,19 @@ public class BattleSystem : MonoBehaviour
             spellSound.Play();
         }
 
+        if (gameManager.currentSpell != null)
+        {
+            spell = Instantiate(gameManager.currentSpell, enemy.transform.position, Quaternion.identity);
+        }
         battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
         advanceDialogueText.SetActive(true);
         
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
+        if (spell != null)
+        {
+            Destroy(spell);
+        }
 
         battleText.text = gameManager.damageRank + gameManager.damageEffectiveness + " You dealt " + gameManager.damage + " damage to " + enemyStats.enemyName + "!";
 
