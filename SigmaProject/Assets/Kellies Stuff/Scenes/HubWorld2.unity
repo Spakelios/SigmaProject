@@ -2789,7 +2789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &181366106
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3364,7 +3364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &247931757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5829,7 +5829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5623620802165446219, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5623620802327461184, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: m_IsActive
@@ -7462,7 +7462,7 @@ PrefabInstance:
     - target: {fileID: 295784067311519106, guid: a6a698bbac3307246b9e4edc6fbc7f87, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ef4b31236ce35d44b9efd7d76e73f7ed, type: 3}
+      objectReference: {fileID: 21300000, guid: bc263d610192b7649963dfda4b729334, type: 3}
     - target: {fileID: 295784067311519106, guid: a6a698bbac3307246b9e4edc6fbc7f87, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -8225,7 +8225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &704571988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12633,9 +12633,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1393168291
+  m_SortingLayer: 7
+  m_SortingOrder: 1313
   m_Sprite: {fileID: 21300000, guid: 02eeb78eb5dadee41904d97b795c3c93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17916,6 +17916,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7370797136050609358, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609360, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -19639,7 +19643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1951937872
 RectTransform:
   m_ObjectHideFlags: 0
