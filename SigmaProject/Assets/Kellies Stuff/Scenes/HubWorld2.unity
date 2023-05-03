@@ -2727,6 +2727,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7370797136050609357, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
   m_PrefabInstance: {fileID: 1983701481}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &218630705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218630699}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927584af54d96134d913aef575d7b466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  girl: {fileID: 21300000, guid: f24889d1ce37eb543b3f64bd6083cfbf, type: 3}
+  boy: {fileID: 21300000, guid: bc4f1faa8941244488665329a75e7570, type: 3}
 --- !u!95 &234969256 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4545703664294279302, guid: 18395f93fe48d3444aef523f31e39ebf, type: 3}
@@ -6411,7 +6425,6 @@ GameObject:
   - component: {fileID: 517868870}
   - component: {fileID: 517868873}
   - component: {fileID: 517868875}
-  - component: {fileID: 517868874}
   m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
@@ -6540,18 +6553,6 @@ MonoBehaviour:
             m_StringArgument: WomanIdle
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &517868874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517868868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6443bc725d87d6418e772b1e21ff425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &517868875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6596,18 +6597,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 517868874}
-        m_TargetAssemblyTypeName: Male, Assembly-CSharp
-        m_MethodName: Female
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 302034685}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -6619,18 +6608,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1948525917}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &537982636
 GameObject:
@@ -9530,7 +9507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214349642567343681, guid: c4b126a62a6d95c4fba04eea6a2207c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3214349642567343681, guid: c4b126a62a6d95c4fba04eea6a2207c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -9539,7 +9516,7 @@ PrefabInstance:
     - target: {fileID: 3214349642567343681, guid: c4b126a62a6d95c4fba04eea6a2207c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 301525813}
+      objectReference: {fileID: 476264114}
     - target: {fileID: 3214349642567343681, guid: c4b126a62a6d95c4fba04eea6a2207c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -9562,7 +9539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214349642567343681, guid: c4b126a62a6d95c4fba04eea6a2207c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.Animator, UnityEngine
+      value: PlayerSelected, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3214349642567343681, guid: c4b126a62a6d95c4fba04eea6a2207c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -9578,7 +9555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214349642567343681, guid: c4b126a62a6d95c4fba04eea6a2207c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PlayerStart
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3214349642567343681, guid: c4b126a62a6d95c4fba04eea6a2207c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -15602,6 +15579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6443bc725d87d6418e772b1e21ff425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m: {fileID: 301525813}
 --- !u!114 &1533846898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15669,18 +15647,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 218630699}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1567969025
 GameObject:
@@ -18818,11 +18784,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1948525917 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7370797136050609357, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
-  m_PrefabInstance: {fileID: 557920426}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1948525919 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7370797136050609363, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
@@ -19503,7 +19464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609357, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609358, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_Enabled
@@ -19523,7 +19484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609360, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.3
+      value: -25.16
       objectReference: {fileID: 0}
     - target: {fileID: 7370797136050609360, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
       propertyPath: m_LocalPosition.z
