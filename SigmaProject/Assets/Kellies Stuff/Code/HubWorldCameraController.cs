@@ -7,14 +7,14 @@ using Cinemachine;
 
 public class HubWorldCameraController : MonoBehaviour
 {
-    public walk walk;
+    public walk walk, walk2;
     public GameObject Cam1, Cam2, player;
     public GameObject canvas1;
     public GameObject tutorial1;
     
     public GameObject bookStack;
     public GameObject dataText;
-    public GameObject Player;
+    public GameObject Player, player2;
 
     public AudioSource menuMusic;
     public AudioSource hubMusic;
@@ -40,6 +40,8 @@ public class HubWorldCameraController : MonoBehaviour
     
     public IEnumerator LightsOn()
     {
+        player2.SetActive(false);
+        player.SetActive(false);
         yield return new WaitForSeconds(3);
         
         bookStack.SetActive(true);
@@ -47,7 +49,6 @@ public class HubWorldCameraController : MonoBehaviour
         yield return new WaitForSeconds(2);
         
         
-        player.SetActive(true);
         tutorial1.SetActive(true); 
         dataText.SetActive(true);
         walk.speed = 10;

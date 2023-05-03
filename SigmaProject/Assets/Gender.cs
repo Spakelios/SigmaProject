@@ -1,13 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public class Gender : MonoBehaviour
 {
     public bool changender;
-
-    public void Update()
+  
+    public void changegender(bool check)
+    {
+        changender = check;
+    }
+    
+    public void Start()
     {
         if (changender = true)
         {
@@ -16,13 +22,5 @@ public class Gender : MonoBehaviour
         else
             gameObject.GetComponent<Animator>().SetBool("iswoman", false);
     }
-    
-
-public void changegender(bool check)
-{
-    changender = check;
-}
-
-
 
 }
