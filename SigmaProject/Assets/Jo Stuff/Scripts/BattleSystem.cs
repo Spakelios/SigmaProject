@@ -28,6 +28,8 @@ public class BattleSystem : MonoBehaviour
     public PlayerStats playerStats;
     public EnemyStats enemyStats;
 
+    public Animator enemyAnimator;
+
     private BattleState battleState;
 
     public TextMeshProUGUI battleText;
@@ -113,6 +115,7 @@ public class BattleSystem : MonoBehaviour
         walk = player.GetComponent<walk>();
         playerStats.health = playerStats.maxHealth;
         enemyStats.health = enemyStats.maxHealth;
+        enemyAnimator = enemy.GetComponent<Animator>();
 
 
         yield return new WaitForEndOfFrame();
@@ -191,6 +194,11 @@ public class BattleSystem : MonoBehaviour
             enemyStats.health -= enemyStats.health;
         }
 
+        if (enemyStats.health <= 100)
+        {
+            enemyAnimator.SetBool("isDamaged", true);
+        }
+
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
 
@@ -232,6 +240,8 @@ public class BattleSystem : MonoBehaviour
             battleText.text = enemyStats.enemyName + " tries to attack you, but it missed!";
         }
         
+        enemyAnimator.SetBool("isAttacking", true);
+        
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
         battleText.text = "It dealt " + enemyDamage + " damage to you!";
@@ -248,6 +258,8 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
+        
+        enemyAnimator.SetBool("isAttacking", false);
 
         if (playerStats.health <= 0)
         {
