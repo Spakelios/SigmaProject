@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using Cinemachine;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,8 +15,8 @@ public class ButtonController : MonoBehaviour
     public walk walk;
     public Animator StoneAnim;
     public AudioSource Bridge;
-    
-    
+
+
     public void ChooseABook()
     {
         StartCoroutine(CAB());

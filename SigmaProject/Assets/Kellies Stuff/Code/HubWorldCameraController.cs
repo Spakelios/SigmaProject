@@ -13,6 +13,7 @@ public class HubWorldCameraController : MonoBehaviour
     public GameObject tutorial1;
     
     public GameObject bookStack;
+    public GameObject dataText;
 
     public AudioSource menuMusic;
     public AudioSource hubMusic;
@@ -38,8 +39,7 @@ public class HubWorldCameraController : MonoBehaviour
     public IEnumerator LightsOn()
     {
         yield return new WaitForSeconds(3);
-
-        anim.Play("look");
+        
         bookStack.SetActive(true);
 
         yield return new WaitForSeconds(2);
@@ -47,13 +47,18 @@ public class HubWorldCameraController : MonoBehaviour
         
         player.SetActive(true);
         tutorial1.SetActive(true); 
-        walk.speed = 20;
+        dataText.SetActive(true);
+        walk.speed = 10;
+        
 
         if (!hubMusic.isPlaying)
         {
             hubMusic.Play();
         }
-        // dark.color = new Color(1f, 1f, 1f, .02f);
+
+        yield return new WaitForSeconds(3f);
+            
+        dataText.SetActive(false);
 
     }
 }
