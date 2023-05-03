@@ -2727,6 +2727,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7370797136050609357, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
   m_PrefabInstance: {fileID: 1983701481}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &218630700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4424430428097663173, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
+  m_PrefabInstance: {fileID: 1983701481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218630699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18e96679759aaf448562c51f5298fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &234969256 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4545703664294279302, guid: 18395f93fe48d3444aef523f31e39ebf, type: 3}
@@ -6623,6 +6634,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1948525917}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1948525918}
+        m_TargetAssemblyTypeName: Gender, Assembly-CSharp
+        m_MethodName: changegender
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15682,6 +15705,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 218630700}
+        m_TargetAssemblyTypeName: Gender, Assembly-CSharp
+        m_MethodName: changegender
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1567969025
 GameObject:
   m_ObjectHideFlags: 0
@@ -18823,6 +18858,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7370797136050609357, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
   m_PrefabInstance: {fileID: 557920426}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1948525918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4424430428097663173, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
+  m_PrefabInstance: {fileID: 557920426}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948525917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18e96679759aaf448562c51f5298fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1948525919 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7370797136050609363, guid: 3105afc10c3aab341a1a34b5a5a032d5, type: 3}
