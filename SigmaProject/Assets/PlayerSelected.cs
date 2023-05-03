@@ -12,7 +12,7 @@ public class PlayerSelected : MonoBehaviour
  {
   if (!SelectGender.male && SelectGender.female)
   {
-   Fem.SetBool("options",true);
+   Male.Play("PlayerW_Start");
   }
   else
   {
@@ -24,11 +24,23 @@ public class PlayerSelected : MonoBehaviour
  {
   if (!SelectGender.male && SelectGender.female)
   {
-//
+   Male.Play("PlayerW_Return");
   }
   else
   {
    Male.Play("OptionsReturn");
+  }
+ }
+ 
+ public void Play()
+ {
+  if (!SelectGender.male && SelectGender.female)
+  {
+   Male.Play("WomanWalkIn");
+  }
+  else
+  {
+   Male.Play("PlayerStart");
   }
  }
 }

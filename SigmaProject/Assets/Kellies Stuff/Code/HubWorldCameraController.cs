@@ -14,9 +14,12 @@ public class HubWorldCameraController : MonoBehaviour
     
     public GameObject bookStack;
     public GameObject dataText;
+    public GameObject Player;
 
     public AudioSource menuMusic;
     public AudioSource hubMusic;
+    
+    
     
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -25,7 +28,6 @@ public class HubWorldCameraController : MonoBehaviour
         {
             Cam1.SetActive(false);
             Cam2.SetActive(true);
-            
             canvas1.SetActive(false);
             // canvas2.SetActive(false);
             

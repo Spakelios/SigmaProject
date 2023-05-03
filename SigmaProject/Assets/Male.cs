@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Male : MonoBehaviour
 {
+ public Animator m;
  public void male()
  {
+  m.SetBool("is woman", false);
   SelectGender.male = true;
-  Debug.Log("Male");
  }
 
  public void Female()
  {
+  m.SetBool("is woman", true);
   SelectGender.female = true;
-   Debug.Log("Female");
  }
 }
