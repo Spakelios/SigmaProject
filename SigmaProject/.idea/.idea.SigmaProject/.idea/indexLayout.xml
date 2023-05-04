@@ -29,7 +29,6 @@
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
-      <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Test</Path>
       <Path>UserSettings</Path>

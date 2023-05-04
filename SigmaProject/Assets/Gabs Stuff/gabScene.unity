@@ -4119,7 +4119,7 @@ GameObject:
   - component: {fileID: 624629982}
   - component: {fileID: 624629983}
   - component: {fileID: 624629984}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stepladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6582,7 +6582,7 @@ GameObject:
   - component: {fileID: 934693876}
   - component: {fileID: 934693875}
   - component: {fileID: 934693877}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pedestal (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10330,7 +10330,7 @@ GameObject:
   - component: {fileID: 1382589532}
   - component: {fileID: 1382589533}
   - component: {fileID: 1382589534}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TableVase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11058,7 +11058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4504448783719306372, guid: 69344a890aa04e14889486db830f61bc, type: 3}
       propertyPath: m_LocalRotation.w
