@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class CollectNote : MonoBehaviour
     public static bool note1 = false;
     public static bool note2 = false;
     public static bool note3 = false;
-    
+
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {

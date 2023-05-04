@@ -456,6 +456,7 @@ MonoBehaviour:
   camPos2: {fileID: 1608703006}
   playerStats: {fileID: 11400000, guid: e7f3e01b922a62b46b3d19958a03fb04, type: 2}
   enemyStats: {fileID: 11400000, guid: b1d5f8d6e030a824498a4efb28af0f9b, type: 2}
+  playerAnimator: {fileID: 0}
   enemyAnimator: {fileID: 0}
   battleText: {fileID: 577858170}
   spellbook: {fileID: 2062498478}
@@ -2680,6 +2681,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 50ab925c75659bb4cb2ec645730b5633, type: 3}
+    - target: {fileID: 5465992390128879628, guid: 830ccc120879d224197533204d6fc73a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09d0433a49094b742ab3d76cf80e4274, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830ccc120879d224197533204d6fc73a, type: 3}
 --- !u!95 &2062498478 stripped
