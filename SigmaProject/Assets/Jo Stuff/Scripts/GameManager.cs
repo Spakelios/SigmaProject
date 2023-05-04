@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public AudioClip fireSound;
     public AudioClip waterSound;
     public AudioClip mossSound;
+    public AudioClip spellFailedSound;
 
     public GameObject fire;
     public GameObject water;
@@ -205,7 +206,7 @@ public class GameManager : MonoBehaviour
                 "Fireball" => fireSound,
                 "Waterfall" => waterSound,
                 "Mossy Overgrowth" => mossSound,
-                _ => null
+                _ => spellFailedSound
             };
             battleSystem.ContinuePlayerTurn();
         }
@@ -217,7 +218,7 @@ public class GameManager : MonoBehaviour
                 "Fireball" => fireSound,
                 "Waterfall" => waterSound,
                 "Mossy Overgrowth" => mossSound,
-                _ => null
+                _ => spellFailedSound
             };
             
             tutorialBattle.ContinuePlayerTurn();

@@ -165,10 +165,9 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1);
         mouseClick = false;
         
-        if (spellSound.clip != null)
-        {
-            spellSound.Play();
-        }
+
+        spellSound.Play();
+        
 
         if (gameManager.currentSpell != null)
         {
@@ -241,7 +240,7 @@ public class BattleSystem : MonoBehaviour
         {
             enemyDamage = 0;
 
-            battleText.text = enemyStats.enemyName + " tries to attack you, but it missed!";
+            battleText.text = enemyStats.enemyName + " tries to attack you, but missed!";
         }
         
         enemyAnimator.SetBool("isAttacking", true);
