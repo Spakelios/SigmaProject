@@ -11,6 +11,7 @@ public class AnswerRoomCode : MonoBehaviour
     GameObject chosenanswer;
     public GameObject correctAnswer;
     public GameObject finish;
+    public GameObject paperspriteref;
     // Start is called before the first frame update
     private void Start()
     {
@@ -29,7 +30,8 @@ public class AnswerRoomCode : MonoBehaviour
         if (chosenanswer == correctAnswer)
         {
             finish.SendMessage("addnote", gameObject);
-        }
+            paperspriteref.SetActive(true);
+}
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
