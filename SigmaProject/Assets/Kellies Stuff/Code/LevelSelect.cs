@@ -31,7 +31,7 @@ public class LevelSelect : MonoBehaviour
    anim.Play("Books");
    Walk.canMove = false; 
    Walks.canMove = false;
-
+   
    StartCoroutine(ui());
   }
  }
@@ -39,6 +39,7 @@ public class LevelSelect : MonoBehaviour
  IEnumerator ui()
  {
   yield return new WaitForSeconds(9f);
+  showBooks = false;
   tutorial.SetActive(false);
   tutorial3.SetActive(true);
  }
