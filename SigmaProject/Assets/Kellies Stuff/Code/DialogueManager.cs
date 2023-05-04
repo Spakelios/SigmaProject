@@ -23,6 +23,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
 
+        FindObjectOfType<walk>().canMove = false;
+        GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Canvas.SetActive(true);
         
         nameText.text = dialogue.name;
@@ -63,5 +65,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         Canvas.SetActive(false);
+        FindObjectOfType<walk>().canMove = true;
     }
 }

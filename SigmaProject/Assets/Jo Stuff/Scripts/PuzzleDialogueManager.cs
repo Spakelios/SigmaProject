@@ -21,6 +21,8 @@ public class PuzzleDialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        FindObjectOfType<walk>().canMove = false;
+        GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         Canvas.SetActive(true);
         
@@ -62,5 +64,6 @@ public class PuzzleDialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         Canvas.SetActive(false);
+        FindObjectOfType<walk>().canMove = true;
     }
 }
