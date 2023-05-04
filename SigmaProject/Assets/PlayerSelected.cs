@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class PlayerSelected : MonoBehaviour
 {
  public Animator Fem, Male;
-
+ public GameObject femal, mal;
  public void Options()
  {
   if (!SelectGender.male && SelectGender.female)
   {
-   Fem.Play("PlayerW_Start");
+   Fem.Play("PlayerW_Start"); 
   }
   else
   {
@@ -36,11 +36,27 @@ public class PlayerSelected : MonoBehaviour
  {
   if (!SelectGender.male && SelectGender.female)
   {
+   femal.SetActive(true);
    Fem.Play("WomanWalkIn");
   }
   else
   {
+   mal.SetActive(true);
    Male.Play("PlayerStart");
+  }
+ }
+
+ public void Update()
+ {
+  if (SelectGender.female && !SelectGender.male)
+  {
+   femal.SetActive(true);
+   mal.SetActive(false);
+  }
+  else
+  {
+   mal.SetActive(true);
+   femal.SetActive(true);
   }
  }
 }

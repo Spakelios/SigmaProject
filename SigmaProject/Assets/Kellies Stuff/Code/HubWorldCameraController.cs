@@ -18,10 +18,8 @@ public class HubWorldCameraController : MonoBehaviour
 
     public AudioSource menuMusic;
     public AudioSource hubMusic;
-    
-    
-    
-    
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
