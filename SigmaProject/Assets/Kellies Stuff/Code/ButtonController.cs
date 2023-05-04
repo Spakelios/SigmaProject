@@ -39,8 +39,8 @@ public class ButtonController : MonoBehaviour
         yield return new WaitForSeconds(9f);
 
         CineMachineShake.Instance.ScreenShake(0,0);
-        walk.canMove = false;
-        walks.canMove = false;
+        walk.canMove = true;
+        walks.canMove = true;
         Bridge.volume = 0;
         
     }

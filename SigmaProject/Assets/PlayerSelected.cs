@@ -46,17 +46,5 @@ public class PlayerSelected : MonoBehaviour
   }
  }
 
- public void Update()
- {
-  if (SelectGender.female && !SelectGender.male)
-  {
-   femal.SetActive(true);
-   mal.SetActive(false);
-  }
-  else
-  {
-   mal.SetActive(true);
-   femal.SetActive(true);
-  }
- }
+
 }
