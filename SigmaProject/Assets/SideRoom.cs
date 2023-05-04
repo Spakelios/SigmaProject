@@ -12,10 +12,10 @@ public class SideRoom : MonoBehaviour
             female.SetActive(true);
             male.SetActive(false);
         }
-        else
+        if (!SelectGender.female && SelectGender.male)
         {
             male.SetActive(true);
-            female.SetActive(true);
+            female.SetActive(false);
         }
     }
 }
