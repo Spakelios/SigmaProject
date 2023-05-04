@@ -100,7 +100,7 @@ public class TutorialBattleSystem : MonoBehaviour
         yield return new WaitForEndOfFrame();
         walk.canMove = false;
 
-        battleText.text = "Can never be too prepared, right? It's always good to have a refresher, just in case.";
+        battleText.text = "You can never be too prepared, right? It's always good to have a refresher, just in case.";
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
@@ -130,7 +130,7 @@ public class TutorialBattleSystem : MonoBehaviour
         mouseClick = false;
 
         battleText.text =
-            "On your turn, your spellbook will slide up. Click a spell type on the left page, and draw the symbol that shows up on the right page as accurately as you can. Follow the stencil!";
+            "On your turn, your spellbook will slide up. Click a spell type on the left page, and hold down left click to draw the symbol that shows up on the right page as accurately as you can. Follow the stencil!";
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
