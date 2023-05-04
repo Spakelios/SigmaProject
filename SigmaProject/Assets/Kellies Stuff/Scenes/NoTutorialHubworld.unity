@@ -10830,6 +10830,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9182028574845883483, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9182028574907061940, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_fontSize
       value: 7
@@ -10874,6 +10878,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 704571990}
+    - target: {fileID: 9182028575020408169, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9182028575020408170, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.6
@@ -11077,9 +11085,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 28.89998
       objectReference: {fileID: 0}
+    - target: {fileID: 9182028575384702601, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028575460172765, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028575460172767, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028575574944929, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9182028575574944930, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028575574944942, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9182028575574944942, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -11225,6 +11253,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9182028575753026402, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9182028575807823644, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_fontSize
       value: 6.25
@@ -11345,6 +11377,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9182028575984285819, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9182028576002135240, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11407,6 +11443,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9182028576075317863, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576094143536, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576099940371, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182028576113107720, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9182028576113107721, guid: cc3ebe771f0867f479ab5a6962a44ab2, type: 3}
