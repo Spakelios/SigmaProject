@@ -2478,6 +2478,7 @@ MonoBehaviour:
   tutorial3: {fileID: 1724853505}
   anim: {fileID: 1435552341}
   Walk: {fileID: 3200041}
+  Walks: {fileID: 6713727479788370941}
 --- !u!61 &179741290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8395,14 +8396,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.61960787}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4d6a70116d2363e44b390e963c949030, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4042870187ec1f44a9fc7d67aea4ddde, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15959,6 +15960,7 @@ MonoBehaviour:
   Cam2: {fileID: 1953429451}
   BookUI: {fileID: 723630495}
   walk: {fileID: 3200041}
+  walks: {fileID: 6713727479788370941}
   StoneAnim: {fileID: 471479100}
   Bridge: {fileID: 471479103}
 --- !u!4 &1567969027

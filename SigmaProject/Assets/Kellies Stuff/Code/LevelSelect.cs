@@ -8,7 +8,7 @@ public class LevelSelect : MonoBehaviour
  public GameObject tutorial, tutorial2, tutorial3;
  public Animator anim;
  private bool showBooks = false;
- public walk Walk;
+ public walk Walk, Walks;
 
  public void OnTriggerStay2D(Collider2D other)
  {
@@ -29,7 +29,8 @@ public class LevelSelect : MonoBehaviour
   if (showBooks && Input.GetKeyDown(KeyCode.F))
   {
    anim.Play("Books");
-   Walk.speed = 0;
+   Walk.canMove = false; 
+   Walks.canMove = false;
 
    StartCoroutine(ui());
   }

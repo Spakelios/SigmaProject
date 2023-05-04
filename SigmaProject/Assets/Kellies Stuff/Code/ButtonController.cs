@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class ButtonController : MonoBehaviour
 {
     public GameObject Cam1, Cam2, BookUI;
-    public walk walk;
+    public walk walk, walks;
     public Animator StoneAnim;
     public AudioSource Bridge;
 
@@ -39,7 +39,8 @@ public class ButtonController : MonoBehaviour
         yield return new WaitForSeconds(9f);
 
         CineMachineShake.Instance.ScreenShake(0,0);
-        walk.speed = 20;
+        walk.canMove = false;
+        walks.canMove = false;
         Bridge.volume = 0;
         
     }

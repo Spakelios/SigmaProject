@@ -29,7 +29,10 @@ public class HubWorldCameraController : MonoBehaviour
             Cam1.SetActive(false);
             Cam2.SetActive(true);
             canvas1.SetActive(false);
+            
             // canvas2.SetActive(false);
+            walk.canMove = false;
+            walk2.canMove = false;
             
             menuMusic.Stop();
             StartCoroutine(LightsOn());
@@ -51,7 +54,8 @@ public class HubWorldCameraController : MonoBehaviour
         
         tutorial1.SetActive(true); 
         dataText.SetActive(true);
-        walk.speed = 10;
+        walk.canMove = true;
+        walk2.canMove = true;
         
 
         if (!hubMusic.isPlaying)
