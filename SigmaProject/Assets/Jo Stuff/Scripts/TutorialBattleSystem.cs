@@ -24,6 +24,7 @@ public class TutorialBattleSystem : MonoBehaviour
     public EnemyStats enemyStats;
 
     public Animator playerAnimator;
+    public Animator enemyAnimator;
 
     private TutorialBattleState battleState;
 
@@ -82,6 +83,7 @@ public class TutorialBattleSystem : MonoBehaviour
     private IEnumerator StartBattle()
     {
         player = Instantiate(playerStats.playerGameObject, playerPos1.position, Quaternion.identity);
+        enemy = Instantiate(enemyStats.enemyGameObject, enemyPos1.position, Quaternion.identity);
         //gameObject.transform.parent.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         
         Camera.main.transform.position = camPos1.position;
@@ -92,6 +94,7 @@ public class TutorialBattleSystem : MonoBehaviour
         enemyStats.health = enemyStats.maxHealth;
 
         playerAnimator = player.GetComponent<Animator>();
+        enemyAnimator = enemy.GetComponent<Animator>();
 
 
         yield return new WaitForEndOfFrame();
@@ -132,7 +135,7 @@ public class TutorialBattleSystem : MonoBehaviour
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
 
-        battleText.text = "Well then, show me what you've got!";
+        battleText.text = "Well then, let's see what you've got!";
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
@@ -155,10 +158,9 @@ public class TutorialBattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1);
         mouseClick = false;
         
-        if (spellSound.clip != null)
-        {
-            spellSound.Play();
-        }
+        
+        spellSound.Play();
+        
 
         if (gameManager.currentSpell != null)
         {
@@ -186,6 +188,11 @@ public class TutorialBattleSystem : MonoBehaviour
         {
             enemyStats.health -= enemyStats.health;
         }
+        
+        if (enemyStats.health <= 100)
+        {
+            enemyAnimator.SetBool("isDamaged", true);
+        }
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
@@ -208,13 +215,13 @@ public class TutorialBattleSystem : MonoBehaviour
         mouseClick = false;
 
         battleText.text =
-            "Enemies will attack you for anywhere between 20 and 30 damage. However, they also have a chance to miss their attack completely! Happy days, eh?";
+            "Enemies will attack you for anywhere between 20 and 30 damage. However, they also have a chance to miss their attack completely!";
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
 
         battleText.text =
-            "I'll give you a lil example of an enemy turn. Don't worry if my broom hits ya, you'll be fine!";
+            "Now I'll let this guy right here try and attack you. Don't worry, I won't let you get hurt too badly!";
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
@@ -235,7 +242,7 @@ public class TutorialBattleSystem : MonoBehaviour
 
         if (attackChance <= 7) //70% chance to hit
         {
-            battleText.text = enemyStats.enemyName + " swings their broom at you!";
+            battleText.text = enemyStats.enemyName + " drains your energy with moss!";
             enemyDamage = Random.Range(20, 31);
         }
 
@@ -243,8 +250,10 @@ public class TutorialBattleSystem : MonoBehaviour
         {
             enemyDamage = 0;
 
-            battleText.text = enemyStats.enemyName + " tries to attack you, but they missed!";
+            battleText.text = enemyStats.enemyName + " tries to attack you, but missed!";
         }
+        
+        enemyAnimator.SetBool("isAttacking", true);
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
@@ -262,6 +271,8 @@ public class TutorialBattleSystem : MonoBehaviour
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;
+        
+        enemyAnimator.SetBool("isAttacking", false);
 
         battleText.text =
             "That wasn't so bad now, was it? If your HP didn't hit 0 after an enemy's turn, it'll be your turn again. Rinse and repeat until one of you defeats the other.";
@@ -276,7 +287,7 @@ public class TutorialBattleSystem : MonoBehaviour
     private IEnumerator EndBattle()
     {
         battleText.text =
-            "And that's about it! After the battle you'll either be transported back to the overworld if you won, or the battle will start again if you lost.";
+            "And that's about it! After the battle you'll either be transported back to the Overworld if you won, or the battle will start again if you lost.";
 
         yield return new WaitUntil(() => mouseClick);
         mouseClick = false;

@@ -17,8 +17,13 @@ public class BattleTutorialStart : MonoBehaviour
 
     public EnemyStats status;
 
+    public DialogueTrigger dialogueTrigger;
+
+    public bool tutorialGoblin;
+
     private void Start()
     {
+        dialogueTrigger = GetComponent<DialogueTrigger>();
         choice.SetActive(false);
         status = gameObject.GetComponent<Enemy>().enemyStats;
         enemyStats.enemyName = status.enemyName;
@@ -39,6 +44,7 @@ public class BattleTutorialStart : MonoBehaviour
 
     private void Update()
     {
+        if (!tutorialGoblin) return;
         if (dialogueManager.sentences.Count == 0 && !tutorialBattleStart)
         {
             choice.SetActive(true);
@@ -48,7 +54,6 @@ public class BattleTutorialStart : MonoBehaviour
         {
             choice.SetActive(false);
         }
-
     }
     
     public void StartTutorialBattle()
@@ -69,7 +74,7 @@ public class BattleTutorialStart : MonoBehaviour
 
     public void NoTutorialBattle()
     {
-        canvas.SetActive(false);
+        choice.SetActive(false);
         dialogueManager.EndDialogue();
     }
 }

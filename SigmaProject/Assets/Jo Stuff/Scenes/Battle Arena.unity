@@ -2103,7 +2103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 237.81, y: -70.6}
+  m_AnchoredPosition: {x: 238.9, y: -67.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604199315
@@ -2153,8 +2153,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.19
-  m_fontSizeBase: 11.19
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2458,6 +2458,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 2bb01bddefe6efe4b9b5acab939466e0, type: 3}
   waterSound: {fileID: 8300000, guid: 2a49bb2d6e998ac40b8a60bc9450967f, type: 3}
   mossSound: {fileID: 8300000, guid: 8cb7f53e854a32e42a8c90e4f8b3d6d3, type: 3}
+  spellFailedSound: {fileID: 8300000, guid: 3261d05c1d6676041957e8d81dba26d3, type: 3}
   fire: {fileID: 8841526554502506067, guid: b09f78d35e3168b429e78535354ace59, type: 3}
   water: {fileID: 3303473499925326152, guid: 3451a352959e934449d3f97b82e4d723, type: 3}
   moss: {fileID: 5677277510923056022, guid: 4ca31838a743e6b4ab7937cad1493fe8, type: 3}
