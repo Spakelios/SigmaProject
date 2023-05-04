@@ -24,8 +24,8 @@ public class ButtonController : MonoBehaviour
 
     private IEnumerator CAB()
     {
-        walk.speed = 0;
-        
+        walk.canMove = false;
+        walks.canMove = false;
 
         yield return new WaitForSeconds(10f);
         
