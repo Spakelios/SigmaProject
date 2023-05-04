@@ -5468,7 +5468,7 @@ PrefabInstance:
     - target: {fileID: 5623620802825178613, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: player2
       value: 
-      objectReference: {fileID: 3200036}
+      objectReference: {fileID: 372322315}
     - target: {fileID: 5623620802825178613, guid: adae1ebf3d1110e4d8275b327d085d0c, type: 3}
       propertyPath: Animator
       value: 
@@ -15713,10 +15713,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 302034689}
-        m_TargetAssemblyTypeName: Male, Assembly-CSharp
-        m_MethodName: male
-        m_Mode: 1
+      - m_Target: {fileID: 3200036}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15725,10 +15725,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3200036}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 302034689}
+        m_TargetAssemblyTypeName: Male, Assembly-CSharp
+        m_MethodName: male
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

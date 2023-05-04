@@ -41,7 +41,7 @@ public class HubWorldCameraController : MonoBehaviour
     public IEnumerator LightsOn()
     {
         player2.SetActive(false);
-        player.SetActive(false);
+        Player.SetActive(false);
         yield return new WaitForSeconds(3);
         
         bookStack.SetActive(true);
