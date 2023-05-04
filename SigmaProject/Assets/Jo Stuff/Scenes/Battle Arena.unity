@@ -456,6 +456,7 @@ MonoBehaviour:
   camPos2: {fileID: 1608703006}
   playerStats: {fileID: 11400000, guid: e7f3e01b922a62b46b3d19958a03fb04, type: 2}
   enemyStats: {fileID: 11400000, guid: b1d5f8d6e030a824498a4efb28af0f9b, type: 2}
+  enemyAnimator: {fileID: 0}
   battleText: {fileID: 577858170}
   spellbook: {fileID: 2062498478}
   playerStatHUD: {fileID: 0}

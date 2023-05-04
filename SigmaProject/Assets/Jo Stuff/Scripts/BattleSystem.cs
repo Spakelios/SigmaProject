@@ -28,6 +28,7 @@ public class BattleSystem : MonoBehaviour
     public PlayerStats playerStats;
     public EnemyStats enemyStats;
 
+    public Animator playerAnimator;
     public Animator enemyAnimator;
 
     private BattleState battleState;
@@ -115,6 +116,7 @@ public class BattleSystem : MonoBehaviour
         walk = player.GetComponent<walk>();
         playerStats.health = playerStats.maxHealth;
         enemyStats.health = enemyStats.maxHealth;
+        playerAnimator = player.GetComponent<Animator>();
         enemyAnimator = enemy.GetComponent<Animator>();
 
 
@@ -172,6 +174,8 @@ public class BattleSystem : MonoBehaviour
         {
             spell = Instantiate(gameManager.currentSpell, enemy.transform.position, Quaternion.identity);
         }
+        
+        playerAnimator.Play("Spellcast");
         battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
         advanceDialogueText.SetActive(true);
         

@@ -23,6 +23,8 @@ public class TutorialBattleSystem : MonoBehaviour
     public PlayerStats playerStats;
     public EnemyStats enemyStats;
 
+    public Animator playerAnimator;
+
     private TutorialBattleState battleState;
 
     public TextMeshProUGUI battleText;
@@ -88,6 +90,8 @@ public class TutorialBattleSystem : MonoBehaviour
         walk = player.GetComponent<walk>();
         playerStats.health = playerStats.maxHealth;
         enemyStats.health = enemyStats.maxHealth;
+
+        playerAnimator = player.GetComponent<Animator>();
 
 
         yield return new WaitForEndOfFrame();
@@ -160,6 +164,7 @@ public class TutorialBattleSystem : MonoBehaviour
         {
             spell = Instantiate(gameManager.currentSpell, enemy.transform.position, Quaternion.identity);
         }
+        playerAnimator.Play("Spellcast");
         battleText.text = playerStats.playerName + " casts " + gameManager.spell + "!";
         advanceDialogueText.SetActive(true);
 
