@@ -2526,13 +2526,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 179741286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83746f294bb98f24b9f99f5c799fe4b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 019ff3390e5f8424db7762bd46f71463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
     name: ???
     sentences:
-    - 'So you''re here, huh? Means something bad happened in the Library, eh? '
+    - So you're here, huh? Means something bad happened in the Library, eh?
     - Here's what you need to do, kid.
     - Select one of these books with your mouse to explore a section of the library.
     - Collect and use its data to protect it by fighting monsters and solving puzzles!
@@ -6984,7 +6984,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 537982636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfa9aa6afdbafec4bb7fe2e4f8efff8c, type: 3}
+  m_Script: {fileID: 11500000, guid: a6572741cc21a2843b5a58977733d672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1017352811}
@@ -13555,7 +13555,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 537982637}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: DialogueManage, Assembly-CSharp
         m_MethodName: DisplayNextSentence
         m_Mode: 1
         m_Arguments:
